@@ -25,6 +25,14 @@ const Index = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-4xl mx-auto"
         >
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <button className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-all hover:scale-105">
+              Find Design Jobs
+            </button>
+            <button className="bg-white border border-gray-200 px-8 py-4 rounded-lg hover:bg-gray-50 transition-all">
+              For Employers
+            </button>
+          </div>
           <span className="inline-block bg-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
             Design Your Future
           </span>
@@ -34,14 +42,6 @@ const Index = () => {
           <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
             A task-based job portal where serious designers meet quality opportunities. Show your skills, not just your resume.
           </p>
-          <div className="flex items-center justify-center gap-4">
-            <button className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-all hover:scale-105">
-              Find Design Jobs
-            </button>
-            <button className="bg-white border border-gray-200 px-8 py-4 rounded-lg hover:bg-gray-50 transition-all">
-              For Employers
-            </button>
-          </div>
         </motion.section>
 
         <motion.section 
