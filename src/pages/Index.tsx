@@ -1,5 +1,7 @@
+
 import { motion } from "framer-motion";
 import { BriefcaseIcon, UsersIcon, StarIcon, ShieldCheckIcon, SparklesIcon, CreditCardIcon } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Index = () => {
   return (
@@ -117,23 +119,38 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="glass-card rounded-xl p-8 hover-lift">
-              <ShieldCheckIcon className="w-12 h-12 text-primary mb-4" />
-              <h3 className="font-display text-xl font-semibold mb-2">Verified Candidates</h3>
-              <p className="text-gray-600">Every applicant is pre-screened and committed with a submission fee.</p>
+          <Tabs defaultValue="verified" className="w-full">
+            <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-8">
+              <TabsTrigger value="verified">Verified Candidates</TabsTrigger>
+              <TabsTrigger value="task-based">Task-Based Selection</TabsTrigger>
+              <TabsTrigger value="safe">Safe Hiring</TabsTrigger>
+            </TabsList>
+            <div className="overflow-x-auto pb-4">
+              <div className="flex gap-8 px-4">
+                <TabsContent value="verified" className="mt-0 min-w-[300px]">
+                  <div className="glass-card rounded-xl p-8 hover-lift h-full">
+                    <ShieldCheckIcon className="w-12 h-12 text-primary mb-4" />
+                    <h3 className="font-display text-xl font-semibold mb-2">Verified Candidates</h3>
+                    <p className="text-gray-600">Every applicant is pre-screened and committed with a submission fee.</p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="task-based" className="mt-0 min-w-[300px]">
+                  <div className="glass-card rounded-xl p-8 hover-lift h-full">
+                    <SparklesIcon className="w-12 h-12 text-primary mb-4" />
+                    <h3 className="font-display text-xl font-semibold mb-2">Task-Based Selection</h3>
+                    <p className="text-gray-600">Evaluate designers based on their actual work, not just their portfolio.</p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="safe" className="mt-0 min-w-[300px]">
+                  <div className="glass-card rounded-xl p-8 hover-lift h-full">
+                    <CreditCardIcon className="w-12 h-12 text-primary mb-4" />
+                    <h3 className="font-display text-xl font-semibold mb-2">Safe Hiring</h3>
+                    <p className="text-gray-600">Refundable ₹2500 deposit ensures a secure hiring process.</p>
+                  </div>
+                </TabsContent>
+              </div>
             </div>
-            <div className="glass-card rounded-xl p-8 hover-lift">
-              <SparklesIcon className="w-12 h-12 text-primary mb-4" />
-              <h3 className="font-display text-xl font-semibold mb-2">Task-Based Selection</h3>
-              <p className="text-gray-600">Evaluate designers based on their actual work, not just their portfolio.</p>
-            </div>
-            <div className="glass-card rounded-xl p-8 hover-lift">
-              <CreditCardIcon className="w-12 h-12 text-primary mb-4" />
-              <h3 className="font-display text-xl font-semibold mb-2">Safe Hiring</h3>
-              <p className="text-gray-600">Refundable ₹2500 deposit ensures a secure hiring process.</p>
-            </div>
-          </div>
+          </Tabs>
 
           <div className="mt-12 text-center">
             <button className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-all hover:scale-105">
