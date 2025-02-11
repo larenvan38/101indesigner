@@ -1,6 +1,5 @@
-
 import { motion } from "framer-motion";
-import { BriefcaseIcon, UsersIcon, StarIcon } from "lucide-react";
+import { BriefcaseIcon, UsersIcon, StarIcon, ShieldCheckIcon, SparklesIcon, CreditCardIcon } from "lucide-react";
 
 const Index = () => {
   return (
@@ -97,6 +96,49 @@ const Index = () => {
               <h3 className="font-display text-lg font-semibold mb-2">Get Hired</h3>
               <p className="text-gray-600">Connect with employers and secure your next opportunity.</p>
             </div>
+          </div>
+        </motion.section>
+
+        <motion.section 
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-24 mb-24"
+        >
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="inline-block bg-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+              For Employers
+            </span>
+            <h2 className="font-display text-4xl font-bold mb-6">
+              Hire the Best Design Talent
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Skip the resume screening and find exceptional designers through real-world tasks. Our platform ensures you only see submissions from committed professionals.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="glass-card rounded-xl p-8 hover-lift">
+              <ShieldCheckIcon className="w-12 h-12 text-primary mb-4" />
+              <h3 className="font-display text-xl font-semibold mb-2">Verified Candidates</h3>
+              <p className="text-gray-600">Every applicant is pre-screened and committed with a submission fee.</p>
+            </div>
+            <div className="glass-card rounded-xl p-8 hover-lift">
+              <SparklesIcon className="w-12 h-12 text-primary mb-4" />
+              <h3 className="font-display text-xl font-semibold mb-2">Task-Based Selection</h3>
+              <p className="text-gray-600">Evaluate designers based on their actual work, not just their portfolio.</p>
+            </div>
+            <div className="glass-card rounded-xl p-8 hover-lift">
+              <CreditCardIcon className="w-12 h-12 text-primary mb-4" />
+              <h3 className="font-display text-xl font-semibold mb-2">Safe Hiring</h3>
+              <p className="text-gray-600">Refundable ₹2500 deposit ensures a secure hiring process.</p>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <button className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-all hover:scale-105">
+              Start Hiring Now
+            </button>
           </div>
         </motion.section>
       </main>
