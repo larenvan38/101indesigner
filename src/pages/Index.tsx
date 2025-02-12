@@ -1,7 +1,7 @@
-
 import { motion, AnimatePresence } from "framer-motion";
 import { BriefcaseIcon, UsersIcon, StarIcon, ShieldCheckIcon, SparklesIcon, CreditCardIcon } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [currentView, setCurrentView] = useState<'jobs' | 'employers'>('jobs');
@@ -14,9 +14,9 @@ const Index = () => {
             <h1 className="font-display text-2xl font-bold">INDesigner</h1>
             <div className="space-x-6">
               <button className="text-gray-600 hover:text-gray-900 transition-colors">Sign In</button>
-              <button className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+              <Link to="/start-hiring" className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
                 Post a Job
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -67,9 +67,12 @@ const Index = () => {
                     A task-based job portal where serious designers meet quality opportunities. Show your skills, not just your resume.
                   </p>
 
-                  <button className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-all hover:scale-105 mb-12">
+                  <Link 
+                    to="/explore-jobs"
+                    className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-all hover:scale-105 mb-12"
+                  >
                     Explore Jobs
-                  </button>
+                  </Link>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                     <div className="glass-card rounded-xl p-8 hover-lift">
@@ -141,9 +144,12 @@ const Index = () => {
                     Skip the resume screening and find exceptional designers through real-world tasks. Our platform ensures you only see submissions from committed professionals.
                   </p>
 
-                  <button className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-all hover:scale-105 mb-12">
+                  <Link 
+                    to="/start-hiring"
+                    className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-all hover:scale-105 mb-12"
+                  >
                     Start Hiring Now
-                  </button>
+                  </Link>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                     <div className="glass-card rounded-xl p-8 hover-lift">
