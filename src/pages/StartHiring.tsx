@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, CheckCircle2Icon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -14,9 +15,11 @@ const StartHiring = () => {
               </Link>
               <h1 className="font-display text-2xl font-bold">INDesigner</h1>
             </div>
-            <button className="text-gray-600 hover:text-gray-900 transition-colors">
-              Sign In
-            </button>
+            <div className="flex items-center gap-6">
+              <Link to="/dashboard" className="text-gray-600 hover:text-gray-900">Dashboard</Link>
+              <Link to="/chat" className="text-gray-600 hover:text-gray-900">Chat</Link>
+              <button className="button-primary">Sign In</button>
+            </div>
           </div>
         </div>
       </nav>
@@ -30,7 +33,7 @@ const StartHiring = () => {
           >
             <h1 className="mb-4">Post Your Design Task</h1>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Create a task-based job posting to find the perfect designer for your project.
+              Create a task-based job posting to find the perfect designer. Free to post, pay only when you're ready to hire.
             </p>
           </motion.div>
 
@@ -42,24 +45,94 @@ const StartHiring = () => {
           >
             <div className="feature-card">
               <div className="space-y-6">
+                <div className="grid grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Full Name *</label>
+                    <input
+                      type="text"
+                      required
+                      className="input-field"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Mobile Number *</label>
+                    <input
+                      type="tel"
+                      required
+                      className="input-field"
+                    />
+                  </div>
+                </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Job Title</label>
+                  <label className="block text-sm font-medium mb-2">Email *</label>
                   <input
-                    type="text"
-                    placeholder="e.g., UI/UX Designer for Mobile App"
+                    type="email"
+                    required
                     className="input-field"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Design Task Description</label>
+                  <label className="block text-sm font-medium mb-2">Company Name</label>
+                  <input
+                    type="text"
+                    className="input-field"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Job Title *</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g., Senior UI/UX Designer"
+                    className="input-field"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Job Type *</label>
+                  <select className="input-field" required>
+                    <option value="">Select job type</option>
+                    <option value="full-time">Full-time</option>
+                    <option value="remote">Remote</option>
+                    <option value="office">Office</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Location</label>
+                  <input
+                    type="text"
+                    placeholder="City, State"
+                    className="input-field"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Design Task Description * (75 words max)</label>
                   <textarea
                     rows={4}
+                    required
+                    maxLength={300}
                     placeholder="Describe the design task candidates need to complete..."
                     className="input-field"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Budget Range</label>
+                  <label className="block text-sm font-medium mb-2">Sample Work Links</label>
+                  <input
+                    type="url"
+                    placeholder="Figma, Dribbble, or Behance links"
+                    className="input-field"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Assignment Link *</label>
+                  <input
+                    type="url"
+                    required
+                    placeholder="Link to the design task details"
+                    className="input-field"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Salary Range</label>
                   <div className="flex gap-4">
                     <input
                       type="number"
@@ -79,22 +152,32 @@ const StartHiring = () => {
             <div className="feature-card">
               <h3 className="mb-4">Security Deposit</h3>
               <p className="text-gray-600 mb-6">
-                A refundable deposit of ₹2,500 is required to ensure a safe hiring process.
+                A refundable deposit of ₹2,500 per hire is required to ensure a safe hiring process.
               </p>
-              <div className="flex items-start gap-4">
-                <CheckCircle2Icon className="w-6 h-6 text-primary mt-1" />
-                <div>
-                  <h4 className="font-medium mb-1">Why do we need a deposit?</h4>
-                  <p className="text-gray-600 text-sm">
-                    The deposit helps us maintain a high-quality platform and ensures serious employers only.
-                    It will be fully refunded once the hiring process is complete.
-                  </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <CheckCircle2Icon className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h4 className="font-medium mb-1">Anti-fraud Protection</h4>
+                    <p className="text-gray-600 text-sm">
+                      75% of the deposit (₹1,875) will be refunded after successful hiring verification.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <CheckCircle2Icon className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h4 className="font-medium mb-1">Quality Assurance</h4>
+                    <p className="text-gray-600 text-sm">
+                      We verify all job posts to maintain platform quality and protect designers.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <button className="button-primary w-full">
-              Continue to Payment
+            <button type="submit" className="button-primary w-full">
+              Post Job (Free)
             </button>
           </motion.form>
         </div>
