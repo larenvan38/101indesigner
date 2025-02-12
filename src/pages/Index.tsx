@@ -8,13 +8,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
-        <div className="container mx-auto px-6 py-4">
+      <nav className="nav-container">
+        <div className="section-container py-4">
           <div className="flex items-center justify-between">
             <h1 className="font-display text-2xl font-bold">INDesigner</h1>
             <div className="space-x-6">
               <button className="text-gray-600 hover:text-gray-900 transition-colors">Sign In</button>
-              <Link to="/start-hiring" className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+              <Link to="/start-hiring" className="button-primary">
                 Post a Job
               </Link>
             </div>
@@ -22,25 +22,17 @@ const Index = () => {
         </div>
       </nav>
 
-      <main className="container mx-auto px-6 pt-32">
-        <div className="flex items-center justify-center gap-4 mb-12">
+      <main className="section-container pt-32">
+        <div className="flex items-center justify-center gap-4 mb-16">
           <button 
             onClick={() => setCurrentView('jobs')}
-            className={`px-8 py-4 rounded-lg transition-all ${
-              currentView === 'jobs' 
-                ? 'bg-primary text-white hover:bg-primary/90' 
-                : 'bg-white border border-gray-200 hover:bg-gray-50'
-            }`}
+            className={currentView === 'jobs' ? 'button-primary' : 'button-secondary'}
           >
             Find Design Jobs
           </button>
           <button 
             onClick={() => setCurrentView('employers')}
-            className={`px-8 py-4 rounded-lg transition-all ${
-              currentView === 'employers' 
-                ? 'bg-primary text-white hover:bg-primary/90' 
-                : 'bg-white border border-gray-200 hover:bg-gray-50'
-            }`}
+            className={currentView === 'employers' ? 'button-primary' : 'button-secondary'}
           >
             For Employers
           </button>
@@ -55,39 +47,35 @@ const Index = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 100 }}
                 transition={{ duration: 0.3 }}
+                className="max-w-4xl mx-auto"
               >
-                <motion.section className="text-center max-w-4xl mx-auto">
-                  <span className="inline-block bg-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <motion.section className="text-center">
+                  <span className="inline-block bg-accent px-4 py-2 rounded-full text-sm font-medium mb-8">
                     Design Your Future
                   </span>
-                  <h1 className="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                    Connect with Top Design Opportunities
-                  </h1>
+                  <h1 className="mb-6">Connect with Top Design Opportunities</h1>
                   <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
                     A task-based job portal where serious designers meet quality opportunities. Show your skills, not just your resume.
                   </p>
 
-                  <Link 
-                    to="/explore-jobs"
-                    className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-all hover:scale-105 mb-12"
-                  >
+                  <Link to="/explore-jobs" className="button-primary inline-block mb-20">
                     Explore Jobs
                   </Link>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-                    <div className="glass-card rounded-xl p-8 hover-lift">
-                      <BriefcaseIcon className="w-12 h-12 text-primary mb-4" />
-                      <h3 className="font-display text-xl font-semibold mb-2">Task-Based Hiring</h3>
+                    <div className="feature-card">
+                      <BriefcaseIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Task-Based Hiring</h3>
                       <p className="text-gray-600">Show your skills through real design tasks, not just resumes.</p>
                     </div>
-                    <div className="glass-card rounded-xl p-8 hover-lift">
-                      <UsersIcon className="w-12 h-12 text-primary mb-4" />
-                      <h3 className="font-display text-xl font-semibold mb-2">Quality Candidates</h3>
+                    <div className="feature-card">
+                      <UsersIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Quality Candidates</h3>
                       <p className="text-gray-600">₹29 submission fee ensures only serious designers apply.</p>
                     </div>
-                    <div className="glass-card rounded-xl p-8 hover-lift">
-                      <StarIcon className="w-12 h-12 text-primary mb-4" />
-                      <h3 className="font-display text-xl font-semibold mb-2">Verified Employers</h3>
+                    <div className="feature-card">
+                      <StarIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Verified Employers</h3>
                       <p className="text-gray-600">Anti-fraud deposit system for secure hiring process.</p>
                     </div>
                   </div>
@@ -132,39 +120,38 @@ const Index = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.3 }}
+                className="max-w-4xl mx-auto"
               >
-                <motion.section className="text-center max-w-4xl mx-auto">
-                  <span className="inline-block bg-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <motion.section className="text-center">
+                  <span className="inline-block bg-accent px-4 py-2 rounded-full text-sm font-medium mb-8">
                     Find Perfect Person
                   </span>
-                  <h1 className="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                    Hire the Best Design Talent
-                  </h1>
+                  <h1 className="mb-6">Hire the Best Design Talent</h1>
                   <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
                     Skip the resume screening and find exceptional designers through real-world tasks. Our platform ensures you only see submissions from committed professionals.
                   </p>
 
                   <Link 
                     to="/start-hiring"
-                    className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-all hover:scale-105 mb-12"
+                    className="button-primary inline-block mb-20"
                   >
                     Start Hiring Now
                   </Link>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-                    <div className="glass-card rounded-xl p-8 hover-lift">
-                      <ShieldCheckIcon className="w-12 h-12 text-primary mb-4" />
-                      <h3 className="font-display text-xl font-semibold mb-2">Verified Candidates</h3>
+                    <div className="feature-card">
+                      <ShieldCheckIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Verified Candidates</h3>
                       <p className="text-gray-600">Every applicant is pre-screened and committed with a submission fee.</p>
                     </div>
-                    <div className="glass-card rounded-xl p-8 hover-lift">
-                      <SparklesIcon className="w-12 h-12 text-primary mb-4" />
-                      <h3 className="font-display text-xl font-semibold mb-2">Task-Based Selection</h3>
+                    <div className="feature-card">
+                      <SparklesIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Task-Based Selection</h3>
                       <p className="text-gray-600">Evaluate designers based on their actual work, not just their portfolio.</p>
                     </div>
-                    <div className="glass-card rounded-xl p-8 hover-lift">
-                      <CreditCardIcon className="w-12 h-12 text-primary mb-4" />
-                      <h3 className="font-display text-xl font-semibold mb-2">Safe Hiring</h3>
+                    <div className="feature-card">
+                      <CreditCardIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Safe Hiring</h3>
                       <p className="text-gray-600">Refundable ₹2500 deposit ensures a secure hiring process.</p>
                     </div>
                   </div>

@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, BriefcaseIcon, SearchIcon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,8 +5,8 @@ import { Link } from "react-router-dom";
 const ExploreJobs = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
-        <div className="container mx-auto px-6 py-4">
+      <nav className="nav-container">
+        <div className="section-container py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
@@ -22,7 +21,7 @@ const ExploreJobs = () => {
         </div>
       </nav>
 
-      <main className="container mx-auto px-6 pt-32">
+      <main className="section-container pt-32">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -33,7 +32,7 @@ const ExploreJobs = () => {
             <input
               type="text"
               placeholder="Search design tasks..."
-              className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className="input-field pl-12"
             />
           </motion.div>
 
@@ -46,29 +45,21 @@ const ExploreJobs = () => {
             {[1, 2, 3].map((job) => (
               <div
                 key={job}
-                className="glass-card rounded-xl p-6 hover-lift cursor-pointer"
+                className="feature-card flex flex-col hover:scale-[1.02]"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="font-display text-xl font-semibold mb-2">
-                      UI/UX Designer for E-commerce App
-                    </h3>
+                  <div className="text-left">
+                    <h3 className="mb-2">UI/UX Designer for E-commerce App</h3>
                     <p className="text-gray-600 mb-4">
                       Create a modern and intuitive user interface for our e-commerce platform.
                     </p>
                   </div>
-                  <BriefcaseIcon className="w-6 h-6 text-primary" />
+                  <BriefcaseIcon className="w-6 h-6 text-primary flex-shrink-0" />
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="bg-accent px-3 py-1 rounded-full text-sm">
-                    ₹40,000 - ₹60,000
-                  </span>
-                  <span className="bg-accent px-3 py-1 rounded-full text-sm">
-                    Remote
-                  </span>
-                  <span className="bg-accent px-3 py-1 rounded-full text-sm">
-                    Task-based
-                  </span>
+                  <span className="tag">₹40,000 - ₹60,000</span>
+                  <span className="tag">Remote</span>
+                  <span className="tag">Task-based</span>
                 </div>
               </div>
             ))}
