@@ -1,9 +1,13 @@
 
 import { motion } from "framer-motion";
-import { ArrowLeftIcon, BriefcaseIcon, SearchIcon, StarIcon } from "lucide-react";
+import { ArrowLeftIcon, BriefcaseIcon, SearchIcon, ArrowRightIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ExploreJobs = () => {
+  const handleSubmitAssignment = () => {
+    window.location.href = "https://accounts.google.com/signin";
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
       <nav className="nav-container">
@@ -67,10 +71,6 @@ const ExploreJobs = () => {
                   <div className="text-left">
                     <div className="flex items-center gap-4 mb-2">
                       <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-sm">Verified Agency</span>
-                      <div className="flex items-center">
-                        <StarIcon className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                        <span className="text-sm font-medium ml-1">4.8</span>
-                      </div>
                     </div>
                     <h3 className="mb-2">UI/UX Designer for E-commerce App</h3>
                     <p className="text-gray-600 mb-4">
@@ -99,7 +99,16 @@ const ExploreJobs = () => {
                           <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Brand Design</span>
                         </div>
                       </div>
-                      <button className="button-primary py-2">View Assignment</button>
+                      <div className="flex gap-3">
+                        <button className="button-primary py-2">View Assignment</button>
+                        <button 
+                          onClick={handleSubmitAssignment}
+                          className="button-primary py-2 flex items-center gap-2"
+                        >
+                          Submit Assignment
+                          <ArrowRightIcon className="w-4 h-4" />
+                        </button>
+                      </div>
                     </div>
                     <div className="text-sm text-gray-600">
                       Submission Fee: ₹29
