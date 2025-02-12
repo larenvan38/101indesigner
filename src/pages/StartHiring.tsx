@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, CheckCircle2Icon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -83,10 +84,10 @@ const StartHiring = () => {
                     <SelectValue placeholder="Select your profile type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="startup">Start-up (Send from your business email)</SelectItem>
-                    <SelectItem value="mnc">MNC (Send from your company email)</SelectItem>
-                    <SelectItem value="agency">Agency (Send from your agency email)</SelectItem>
-                    <SelectItem value="individual">Individual/Small YouTuber (YouTube/Instagram email)</SelectItem>
+                    <SelectItem value="startup">Use your startup email</SelectItem>
+                    <SelectItem value="mnc">Use your company email</SelectItem>
+                    <SelectItem value="agency">Use your agency email</SelectItem>
+                    <SelectItem value="individual">Use your YouTube/Instagram email</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
