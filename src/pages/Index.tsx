@@ -135,30 +135,30 @@ const Index = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="mb-24 py-16 bg-[#F8F9FC] rounded-2xl"
+                    className="mt-24 mb-24 text-center"
                   >
-                    <h2 className="font-display text-5xl font-bold mb-16">How It Works</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto px-8">
+                    <h2 className="font-display text-3xl font-bold mb-8">How It Works</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                       <div className="flex flex-col items-center">
-                        <div className="w-20 h-20 rounded-full bg-[#E0F5F1] flex items-center justify-center mb-8">
-                          <span className="font-display text-3xl font-bold">1</span>
+                        <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-4">
+                          <span className="font-display text-xl font-bold">1</span>
                         </div>
-                        <h3 className="font-display text-2xl font-bold mb-4">Post Your Job</h3>
-                        <p className="text-gray-600 text-lg">Create a design task and set your requirements with a secure deposit.</p>
+                        <h3 className="font-display text-lg font-semibold mb-2">Post Your Job</h3>
+                        <p className="text-gray-600">Create a design task and set your requirements with a secure deposit.</p>
                       </div>
                       <div className="flex flex-col items-center">
-                        <div className="w-20 h-20 rounded-full bg-[#E0F5F1] flex items-center justify-center mb-8">
-                          <span className="font-display text-3xl font-bold">2</span>
+                        <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-4">
+                          <span className="font-display text-xl font-bold">2</span>
                         </div>
-                        <h3 className="font-display text-2xl font-bold mb-4">Review Submissions</h3>
-                        <p className="text-gray-600 text-lg">Get task solutions from committed designers and evaluate their work.</p>
+                        <h3 className="font-display text-lg font-semibold mb-2">Review Submissions</h3>
+                        <p className="text-gray-600">Get task solutions from committed designers and evaluate their work.</p>
                       </div>
                       <div className="flex flex-col items-center">
-                        <div className="w-20 h-20 rounded-full bg-[#E0F5F1] flex items-center justify-center mb-8">
-                          <span className="font-display text-3xl font-bold">3</span>
+                        <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-4">
+                          <span className="font-display text-xl font-bold">3</span>
                         </div>
-                        <h3 className="font-display text-2xl font-bold mb-4">Hire the Best</h3>
-                        <p className="text-gray-600 text-lg">Choose your preferred candidate and start the collaboration.</p>
+                        <h3 className="font-display text-lg font-semibold mb-2">Hire the Best</h3>
+                        <p className="text-gray-600">Choose your preferred candidate and start the collaboration.</p>
                       </div>
                     </div>
                   </motion.section>
@@ -167,38 +167,6 @@ const Index = () => {
             )}
           </AnimatePresence>
         </div>
-
-        <motion.section 
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-24 mb-24 text-center"
-        >
-          <h2 className="font-display text-3xl font-bold mb-8">How It Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-4">
-                <span className="font-display text-xl font-bold">1</span>
-              </div>
-              <h3 className="font-display text-lg font-semibold mb-2">Find Opportunities</h3>
-              <p className="text-gray-600">Browse through curated design tasks from verified employers.</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-4">
-                <span className="font-display text-xl font-bold">2</span>
-              </div>
-              <h3 className="font-display text-lg font-semibold mb-2">Submit Your Work</h3>
-              <p className="text-gray-600">Complete design tasks and showcase your skills directly.</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-4">
-                <span className="font-display text-xl font-bold">3</span>
-              </div>
-              <h3 className="font-display text-lg font-semibold mb-2">Get Hired</h3>
-              <p className="text-gray-600">Connect with employers and secure your next opportunity.</p>
-            </div>
-          </div>
-        </motion.section>
       </main>
     </div>
   );
