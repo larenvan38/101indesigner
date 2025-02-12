@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, CheckCircle2Icon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -50,6 +49,12 @@ const StartHiring = () => {
             className="space-y-8"
           >
             <div className="feature-card">
+              <h3 className="mb-6">Step 1: Sign in to your account</h3>
+              <p className="text-gray-600 mb-8">
+                To ensure the quality of job postings, we require all employers to sign in before posting a job.
+              </p>
+              <button className="button-primary w-full mb-8">Sign In to Continue</button>
+
               <h3 className="mb-6">What Describes You Perfectly?</h3>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
