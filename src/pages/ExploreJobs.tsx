@@ -1,17 +1,9 @@
 
 import { motion } from "framer-motion";
-import { ArrowLeftIcon, BriefcaseIcon, SearchIcon, ArrowRightIcon } from "lucide-react";
+import { ArrowLeftIcon, BriefcaseIcon, SearchIcon, StarIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { useState } from "react";
 
 const ExploreJobs = () => {
-  const [showSignInPrompt, setShowSignInPrompt] = useState(false);
-
-  const handleSubmitAssignment = () => {
-    setShowSignInPrompt(true);
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
       <nav className="nav-container">
@@ -75,6 +67,10 @@ const ExploreJobs = () => {
                   <div className="text-left">
                     <div className="flex items-center gap-4 mb-2">
                       <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-sm">Verified Agency</span>
+                      <div className="flex items-center">
+                        <StarIcon className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                        <span className="text-sm font-medium ml-1">4.8</span>
+                      </div>
                     </div>
                     <h3 className="mb-2">UI/UX Designer for E-commerce App</h3>
                     <p className="text-gray-600 mb-4">
@@ -103,16 +99,7 @@ const ExploreJobs = () => {
                           <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Brand Design</span>
                         </div>
                       </div>
-                      <div className="flex gap-3">
-                        <button className="button-primary py-2">View Assignment</button>
-                        <button 
-                          onClick={handleSubmitAssignment}
-                          className="button-primary py-2 flex items-center gap-2"
-                        >
-                          Submit Assignment
-                          <ArrowRightIcon className="w-4 h-4" />
-                        </button>
-                      </div>
+                      <button className="button-primary py-2">View Assignment</button>
                     </div>
                     <div className="text-sm text-gray-600">
                       Submission Fee: ₹29
@@ -124,23 +111,6 @@ const ExploreJobs = () => {
           </motion.div>
         </div>
       </main>
-
-      <Dialog open={showSignInPrompt} onOpenChange={setShowSignInPrompt}>
-        <DialogContent className="sm:max-w-md">
-          <div className="text-center p-6">
-            <h3 className="text-lg font-semibold mb-2">Sign In Required</h3>
-            <p className="text-gray-600 mb-4">
-              Please sign in to submit your assignment.
-            </p>
-            <button 
-              className="button-primary w-full"
-              onClick={() => setShowSignInPrompt(false)}
-            >
-              Got it
-            </button>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
