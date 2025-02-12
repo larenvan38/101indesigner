@@ -2,8 +2,14 @@
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, CheckCircle2Icon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const StartHiring = () => {
+  const [workType, setWorkType] = useState("");
+  const [numJobs, setNumJobs] = useState(1);
+  const [salaryType, setSalaryType] = useState("");
+  const [profileType, setProfileType] = useState("");
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
       <nav className="nav-container">
@@ -33,7 +39,7 @@ const StartHiring = () => {
           >
             <h1 className="mb-4">Post Your Design Task</h1>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Create a task-based job posting to find the perfect designer. Free to post, pay only when you're ready to hire.
+              Create a task-based job posting to find the perfect designer.
             </p>
           </motion.div>
 
@@ -44,132 +50,197 @@ const StartHiring = () => {
             className="space-y-8"
           >
             <div className="feature-card">
+              <h3 className="mb-6">What Describes You Perfectly?</h3>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <input 
+                    type="radio" 
+                    id="startup" 
+                    name="profile" 
+                    value="startup"
+                    onChange={(e) => setProfileType(e.target.value)}
+                  />
+                  <label htmlFor="startup">Start-up (Send from your business email)</label>
+                </div>
+                <div className="flex items-center gap-3">
+                  <input 
+                    type="radio" 
+                    id="mnc" 
+                    name="profile" 
+                    value="mnc"
+                    onChange={(e) => setProfileType(e.target.value)}
+                  />
+                  <label htmlFor="mnc">MNC (Send from your company email)</label>
+                </div>
+                <div className="flex items-center gap-3">
+                  <input 
+                    type="radio" 
+                    id="agency" 
+                    name="profile" 
+                    value="agency"
+                    onChange={(e) => setProfileType(e.target.value)}
+                  />
+                  <label htmlFor="agency">Agency (Send from your agency email)</label>
+                </div>
+                <div className="flex items-center gap-3">
+                  <input 
+                    type="radio" 
+                    id="individual" 
+                    name="profile" 
+                    value="individual"
+                    onChange={(e) => setProfileType(e.target.value)}
+                  />
+                  <label htmlFor="individual">Individual/Small YouTuber (YouTube/Instagram email)</label>
+                </div>
+              </div>
+              
+              <div className="bg-accent/30 p-4 rounded-lg mb-8">
+                <p className="text-sm">
+                  To verify your identity, send an email with subject line "ERHB4" to post@INDesigner.in
+                  Your post status will be updated within 6 hours.
+                </p>
+              </div>
+
               <div className="space-y-6">
-                <div className="grid grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Full Name *</label>
-                    <input
-                      type="text"
-                      required
-                      className="input-field"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Mobile Number *</label>
-                    <input
-                      type="tel"
-                      required
-                      className="input-field"
-                    />
-                  </div>
-                </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Email *</label>
-                  <input
-                    type="email"
-                    required
+                  <label className="block text-sm font-medium mb-2">Number of Jobs Required *</label>
+                  <select 
                     className="input-field"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Company Name</label>
-                  <input
-                    type="text"
-                    className="input-field"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Job Title *</label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g., Senior UI/UX Designer"
-                    className="input-field"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Job Type *</label>
-                  <select className="input-field" required>
-                    <option value="">Select job type</option>
-                    <option value="full-time">Full-time</option>
-                    <option value="remote">Remote</option>
-                    <option value="office">Office</option>
+                    value={numJobs}
+                    onChange={(e) => setNumJobs(Number(e.target.value))}
+                  >
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={5}>5</option>
                   </select>
                 </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Work Type *</label>
+                    <div className="flex gap-4">
+                      <select 
+                        className="input-field flex-1"
+                        value={workType}
+                        onChange={(e) => setWorkType(e.target.value)}
+                      >
+                        <option value="">Select work type</option>
+                        <option value="full-time">Full-time</option>
+                        <option value="freelance">Freelance</option>
+                      </select>
+                      <div className="flex items-center gap-4">
+                        <label className="flex items-center gap-2">
+                          <input type="radio" name="location" value="remote" />
+                          Remote
+                        </label>
+                        <label className="flex items-center gap-2">
+                          <input type="radio" name="location" value="office" />
+                          Office
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Salary Structure *</label>
+                    <select 
+                      className="input-field mb-4"
+                      value={salaryType}
+                      onChange={(e) => setSalaryType(e.target.value)}
+                    >
+                      <option value="">Select salary type</option>
+                      <option value="fixed">Fixed Salary</option>
+                      <option value="negotiable">Negotiable Salary</option>
+                    </select>
+                    {salaryType === 'fixed' && (
+                      <input
+                        type="number"
+                        placeholder="Enter fixed salary amount (₹)"
+                        className="input-field"
+                      />
+                    )}
+                    {salaryType === 'negotiable' && (
+                      <input
+                        type="number"
+                        placeholder="Enter minimum salary amount (₹)"
+                        className="input-field"
+                      />
+                    )}
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block text-sm font-medium mb-2">Location</label>
-                  <input
-                    type="text"
-                    placeholder="City, State"
+                  <label className="block text-sm font-medium mb-2">What should candidates know? *</label>
+                  <textarea
+                    placeholder="Enter art-focused skills (e.g., Thumbnail design, NOT tools like Photoshop)"
                     className="input-field"
+                    rows={3}
                   />
                 </div>
+
                 <div>
-                  <label className="block text-sm font-medium mb-2">Design Task Description * (75 words max)</label>
+                  <label className="block text-sm font-medium mb-2">Work Description * (75 words max)</label>
                   <textarea
                     rows={4}
-                    required
                     maxLength={300}
-                    placeholder="Describe the design task candidates need to complete..."
+                    placeholder="Describe the work requirements (no AI-generated text)"
                     className="input-field"
                   />
                 </div>
+
                 <div>
-                  <label className="block text-sm font-medium mb-2">Sample Work Links</label>
+                  <label className="block text-sm font-medium mb-2">Sample Work Links *</label>
                   <input
                     type="url"
-                    placeholder="Figma, Dribbble, or Behance links"
+                    placeholder="Behance, Dribbble links"
                     className="input-field"
                   />
                 </div>
+
                 <div>
                   <label className="block text-sm font-medium mb-2">Assignment Link *</label>
                   <input
                     type="url"
-                    required
-                    placeholder="Link to the design task details"
+                    placeholder="Google Drive, Figma links"
                     className="input-field"
                   />
                 </div>
+
                 <div>
-                  <label className="block text-sm font-medium mb-2">Salary Range</label>
-                  <div className="flex gap-4">
-                    <input
-                      type="number"
-                      placeholder="Min (₹)"
-                      className="input-field"
-                    />
-                    <input
-                      type="number"
-                      placeholder="Max (₹)"
-                      className="input-field"
-                    />
-                  </div>
+                  <label className="block text-sm font-medium mb-2">Additional Notes (Optional)</label>
+                  <textarea
+                    placeholder="Any extra information for candidates"
+                    className="input-field"
+                    rows={3}
+                  />
                 </div>
               </div>
             </div>
 
             <div className="feature-card">
               <h3 className="mb-4">Security Deposit</h3>
-              <p className="text-gray-600 mb-6">
-                A refundable deposit of ₹2,500 per hire is required to ensure a safe hiring process.
-              </p>
+              <div className="bg-accent/30 p-4 rounded-lg mb-6">
+                <p className="font-medium">Payable Amount: ₹{numJobs * 2500}</p>
+                <p className="text-sm text-gray-600 mt-2">
+                  Calculated as ₹2,500 × {numJobs} job{numJobs > 1 ? 's' : ''}
+                </p>
+              </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <CheckCircle2Icon className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h4 className="font-medium mb-1">Anti-fraud Protection</h4>
+                    <h4 className="font-medium mb-1">Refund Policy</h4>
                     <p className="text-gray-600 text-sm">
-                      75% of the deposit (₹1,875) will be refunded after successful hiring verification.
+                      75% will be refunded after successfully hiring designers from INDesigner.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckCircle2Icon className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h4 className="font-medium mb-1">Quality Assurance</h4>
+                    <h4 className="font-medium mb-1">Anti-Fraud Protection</h4>
                     <p className="text-gray-600 text-sm">
-                      We verify all job posts to maintain platform quality and protect designers.
+                      Fake posts will incur non-refundable charges to maintain platform quality.
                     </p>
                   </div>
                 </div>
@@ -177,7 +248,7 @@ const StartHiring = () => {
             </div>
 
             <button type="submit" className="button-primary w-full">
-              Post Job (Free)
+              Submit for Review
             </button>
           </motion.form>
         </div>

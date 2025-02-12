@@ -31,11 +31,11 @@ const ExploreJobs = () => {
             <div className="flex flex-wrap gap-4 justify-center">
               <button className="tag bg-primary text-white">All Jobs</button>
               <button className="tag">Full-time</button>
+              <button className="tag">Freelance</button>
               <button className="tag">Remote</button>
               <button className="tag">Office</button>
-              <button className="tag">₹40k-60k</button>
-              <button className="tag">₹60k-80k</button>
-              <button className="tag">₹80k+</button>
+              <button className="tag">Fixed Salary</button>
+              <button className="tag">Negotiable</button>
             </div>
           </div>
 
@@ -65,36 +65,45 @@ const ExploreJobs = () => {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="text-left">
-                    <div className="flex items-center gap-2 mb-2">
-                      <h3>UI/UX Designer for E-commerce App</h3>
+                    <div className="flex items-center gap-4 mb-2">
+                      <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-sm">Verified Agency</span>
                       <div className="flex items-center">
                         <StarIcon className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                         <span className="text-sm font-medium ml-1">4.8</span>
                       </div>
                     </div>
+                    <h3 className="mb-2">UI/UX Designer for E-commerce App</h3>
                     <p className="text-gray-600 mb-4">
-                      Create a modern and intuitive user interface for our e-commerce platform.
+                      Seeking art-focused designer for thumbnail design and brand visuals.
                     </p>
                     <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
                       <span>Posted 2 days ago</span>
                       <span>•</span>
-                      <span>10 applications</span>
+                      <span>Status: In Progress</span>
                     </div>
                   </div>
                   <BriefcaseIcon className="w-6 h-6 text-primary flex-shrink-0" />
                 </div>
-                <div className="flex items-center gap-4">
-                  <span className="tag">₹40,000 - ₹60,000</span>
-                  <span className="tag">Remote</span>
+                <div className="flex flex-wrap items-center gap-4 mb-4">
                   <span className="tag">Full-time</span>
+                  <span className="tag">Remote</span>
+                  <span className="tag">Fixed Salary: ₹40,000</span>
                 </div>
-                <div className="border-t border-gray-100 mt-6 pt-6">
-                  <div className="flex justify-between items-center">
-                    <div className="text-sm">
-                      <span className="font-medium">Assignment Fee:</span>
-                      <span className="text-gray-600 ml-2">₹29</span>
+                <div className="border-t border-gray-100 mt-4 pt-4">
+                  <div className="flex flex-col gap-2">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <span className="text-sm font-medium">Required Skills:</span>
+                        <div className="flex gap-2 mt-1">
+                          <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Thumbnail Design</span>
+                          <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Brand Design</span>
+                        </div>
+                      </div>
+                      <button className="button-primary py-2">View Assignment</button>
                     </div>
-                    <button className="button-primary py-2">View Assignment</button>
+                    <div className="text-sm text-gray-600">
+                      Submission Fee: ₹29
+                    </div>
                   </div>
                 </div>
               </div>
