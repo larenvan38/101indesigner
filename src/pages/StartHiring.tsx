@@ -12,12 +12,17 @@ import {
 
 const StartHiring = () => {
   const [workType, setWorkType] = useState("");
-  const [numJobs, setNumJobs] = useState(1);
+  const [numJobs, setNumJobs] = useState<number>(1);
   const [salaryType, setSalaryType] = useState("");
   const [profileType, setProfileType] = useState("");
 
   const handleGoogleSignIn = () => {
     window.location.href = "https://accounts.google.com/signin";
+  };
+
+  const handleNumJobsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value) || 1;
+    setNumJobs(Math.max(1, value)); // Ensure minimum of 1 job
   };
 
   return (
@@ -96,15 +101,39 @@ const StartHiring = () => {
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium mb-2">Number of Jobs Required *</label>
-                  <select 
-                    className="input-field"
-                    value={numJobs}
-                    onChange={(e) => setNumJobs(Number(e.target.value))}
-                  >
-                    <option value={1}>1</option>
-                    <option value={2}>2</option>
-                    <option value={5}>5</option>
-                  </select>
+                  <div className="flex gap-4 items-center">
+                    <input
+                      type="number"
+                      min="1"
+                      value={numJobs}
+                      onChange={handleNumJobsChange}
+                      className="input-field"
+                      placeholder="Enter number of jobs"
+                    />
+                    <div className="flex gap-2">
+                      <button 
+                        type="button"
+                        onClick={() => setNumJobs(1)}
+                        className="px-3 py-2 border rounded hover:bg-gray-50"
+                      >
+                        1
+                      </button>
+                      <button 
+                        type="button"
+                        onClick={() => setNumJobs(2)}
+                        className="px-3 py-2 border rounded hover:bg-gray-50"
+                      >
+                        2
+                      </button>
+                      <button 
+                        type="button"
+                        onClick={() => setNumJobs(5)}
+                        className="px-3 py-2 border rounded hover:bg-gray-50"
+                      >
+                        5
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="space-y-4">
