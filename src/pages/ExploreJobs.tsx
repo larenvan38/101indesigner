@@ -2,10 +2,14 @@
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, BriefcaseIcon, SearchIcon, ArrowRightIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { useState } from "react";
 
 const ExploreJobs = () => {
+  const [showSignInPrompt, setShowSignInPrompt] = useState(false);
+
   const handleSubmitAssignment = () => {
-    window.location.href = "https://accounts.google.com/signin";
+    setShowSignInPrompt(true);
   };
 
   return (
@@ -120,6 +124,23 @@ const ExploreJobs = () => {
           </motion.div>
         </div>
       </main>
+
+      <Dialog open={showSignInPrompt} onOpenChange={setShowSignInPrompt}>
+        <DialogContent className="sm:max-w-md">
+          <div className="text-center p-6">
+            <h3 className="text-lg font-semibold mb-2">Sign In Required</h3>
+            <p className="text-gray-600 mb-4">
+              Please sign in to submit your assignment.
+            </p>
+            <button 
+              className="button-primary w-full"
+              onClick={() => setShowSignInPrompt(false)}
+            >
+              Got it
+            </button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

@@ -2,9 +2,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BriefcaseIcon, UsersIcon, StarIcon, ShieldCheckIcon, SparklesIcon, CreditCardIcon } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Index = () => {
   const [currentView, setCurrentView] = useState<'jobs' | 'employers'>('jobs');
+  const [showSignInPrompt, setShowSignInPrompt] = useState(false);
+
+  const handleStartHiring = () => {
+    setShowSignInPrompt(true);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
@@ -124,19 +130,19 @@ const Index = () => {
               >
                 <motion.section className="text-center">
                   <span className="inline-block bg-accent px-4 py-2 rounded-full text-sm font-medium mb-8">
-                    Find Perfect Person
+                    Find Perfect Fit
                   </span>
                   <h1 className="mb-6">Hire the Best Design Talent</h1>
                   <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
                     Skip the resume screening and find exceptional designers through real-world tasks. Our platform ensures you only see submissions from committed professionals.
                   </p>
 
-                  <Link 
-                    to="/start-hiring"
+                  <button 
+                    onClick={handleStartHiring}
                     className="button-primary inline-block mb-20"
                   >
                     Start Hiring Now
-                  </Link>
+                  </button>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                     <div className="feature-card">
@@ -193,6 +199,23 @@ const Index = () => {
           </AnimatePresence>
         </div>
       </main>
+
+      <Dialog open={showSignInPrompt} onOpenChange={setShowSignInPrompt}>
+        <DialogContent className="sm:max-w-md">
+          <div className="text-center p-6">
+            <h3 className="text-lg font-semibold mb-2">Sign In Required</h3>
+            <p className="text-gray-600 mb-4">
+              Please sign in to post a job and start hiring talented designers.
+            </p>
+            <button 
+              className="button-primary w-full"
+              onClick={() => setShowSignInPrompt(false)}
+            >
+              Got it
+            </button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
