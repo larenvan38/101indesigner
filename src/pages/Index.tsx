@@ -124,7 +124,7 @@ const Index = () => {
               >
                 <motion.section className="text-center">
                   <span className="inline-block bg-accent px-4 py-2 rounded-full text-sm font-medium mb-8">
-                    Find Perfect Person
+                    Find Perfect Fit
                   </span>
                   <h1 className="mb-6">Hire the Best Design Talent</h1>
                   <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">

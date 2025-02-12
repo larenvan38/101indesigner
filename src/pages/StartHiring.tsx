@@ -1,14 +1,24 @@
-
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, CheckCircle2Icon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const StartHiring = () => {
   const [workType, setWorkType] = useState("");
   const [numJobs, setNumJobs] = useState(1);
   const [salaryType, setSalaryType] = useState("");
   const [profileType, setProfileType] = useState("");
+
+  const handleGoogleSignIn = () => {
+    window.location.href = "https://accounts.google.com/signin";
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
@@ -50,48 +60,30 @@ const StartHiring = () => {
             className="space-y-8"
           >
             <div className="feature-card">
+              <h3 className="mb-6">Step 1: Sign in with Google</h3>
+              <p className="text-gray-600 mb-8">
+                To ensure the quality of job postings and verify your identity, please sign in with your Google account.
+              </p>
+              <button 
+                onClick={handleGoogleSignIn}
+                className="button-primary w-full flex items-center justify-center gap-2 mb-8"
+              >
+                Sign in with Google
+              </button>
+
               <h3 className="mb-6">What Describes You Perfectly?</h3>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3">
-                  <input 
-                    type="radio" 
-                    id="startup" 
-                    name="profile" 
-                    value="startup"
-                    onChange={(e) => setProfileType(e.target.value)}
-                  />
-                  <label htmlFor="startup">Start-up (Send from your business email)</label>
-                </div>
-                <div className="flex items-center gap-3">
-                  <input 
-                    type="radio" 
-                    id="mnc" 
-                    name="profile" 
-                    value="mnc"
-                    onChange={(e) => setProfileType(e.target.value)}
-                  />
-                  <label htmlFor="mnc">MNC (Send from your company email)</label>
-                </div>
-                <div className="flex items-center gap-3">
-                  <input 
-                    type="radio" 
-                    id="agency" 
-                    name="profile" 
-                    value="agency"
-                    onChange={(e) => setProfileType(e.target.value)}
-                  />
-                  <label htmlFor="agency">Agency (Send from your agency email)</label>
-                </div>
-                <div className="flex items-center gap-3">
-                  <input 
-                    type="radio" 
-                    id="individual" 
-                    name="profile" 
-                    value="individual"
-                    onChange={(e) => setProfileType(e.target.value)}
-                  />
-                  <label htmlFor="individual">Individual/Small YouTuber (YouTube/Instagram email)</label>
-                </div>
+              <div className="mb-8">
+                <Select value={profileType} onValueChange={setProfileType}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select your profile type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="startup">Start-up (Send from your business email)</SelectItem>
+                    <SelectItem value="mnc">MNC (Send from your company email)</SelectItem>
+                    <SelectItem value="agency">Agency (Send from your agency email)</SelectItem>
+                    <SelectItem value="individual">Individual/Small YouTuber (YouTube/Instagram email)</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               
               <div className="bg-accent/30 p-4 rounded-lg mb-8">
