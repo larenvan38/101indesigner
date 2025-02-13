@@ -9,10 +9,10 @@ import {
   TooltipTrigger,
 } from "./ui/tooltip";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "./ui/popover";
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "./ui/hover-card";
 import { useState } from "react";
 
 interface JobPost {
@@ -61,14 +61,14 @@ export function AuthenticatedNav() {
             Applied Jobs
           </Button>
         </Link>
-        <Popover>
-          <PopoverTrigger asChild>
+        <HoverCard>
+          <HoverCardTrigger asChild>
             <Button variant="ghost" className="flex items-center gap-2">
               <FileText className="w-5 h-5" />
               Your Posts
             </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-96">
+          </HoverCardTrigger>
+          <HoverCardContent className="w-96">
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <h4 className="font-medium">Your Posts</h4>
@@ -99,8 +99,8 @@ export function AuthenticatedNav() {
                 ))}
               </div>
             </div>
-          </PopoverContent>
-        </Popover>
+          </HoverCardContent>
+        </HoverCard>
         <div className="flex items-center gap-4">
           <Button variant="ghost" className="flex items-center gap-2">
             <MessageSquare className="w-5 h-5" />
