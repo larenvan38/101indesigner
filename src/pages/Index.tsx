@@ -1,3 +1,4 @@
+
 import { motion, AnimatePresence } from "framer-motion";
 import { BriefcaseIcon, UsersIcon, StarIcon, ShieldCheckIcon, SparklesIcon, CreditCardIcon } from "lucide-react";
 import { useState } from "react";
@@ -12,10 +13,12 @@ const Index = () => {
         <div className="section-container py-4">
           <div className="flex items-center justify-between">
             <h1 className="font-display text-2xl font-bold">INDesigner</h1>
-            <div className="space-x-6">
-              <button className="text-gray-600 hover:text-gray-900 transition-colors">Sign In</button>
-              <Link to="/start-hiring" className="button-primary">
-                Post a Job
+            <div>
+              <Link 
+                to="/start-hiring" 
+                className="relative inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+              >
+                Sign In
               </Link>
             </div>
           </div>

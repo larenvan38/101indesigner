@@ -88,6 +88,11 @@ export default {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0)" },
         },
+        shimmer: {
+          "100%": {
+            backgroundPosition: "-200% 0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -95,6 +100,7 @@ export default {
         fadeIn: "fadeIn 0.5s ease-out",
         slideUp: "slideUp 0.5s ease-out",
         slideIn: "slideIn 0.3s ease-out",
+        shimmer: "shimmer 2s infinite",
       },
     },
   },
