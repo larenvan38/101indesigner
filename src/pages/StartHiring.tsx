@@ -49,6 +49,10 @@ const StartHiring = () => {
             <p className="text-gray-600 max-w-2xl mx-auto">
               Create a task-based job posting to find the perfect designer.
             </p>
+            <div className="mt-4 bg-white/50 backdrop-blur-sm p-4 rounded-lg inline-block">
+              <p className="font-medium text-primary">No spam</p>
+              <p className="text-sm text-gray-600">Refundable ₹2500 deposit ensures a secure hiring process</p>
+            </div>
           </motion.div>
 
           <motion.form
