@@ -78,21 +78,21 @@ export function AuthenticatedNav() {
               </div>
               <div className="space-y-3">
                 {jobPosts.map((post) => (
-                  <div key={post.id} className="bg-secondary/50 rounded-lg p-4 space-y-2">
+                  <div key={post.id} className="bg-white rounded-2xl p-4 space-y-2 shadow-sm border border-gray-100">
                     <div className="flex justify-between items-center">
-                      <h5 className="font-medium">{post.title}</h5>
+                      <h5 className="font-medium text-lg">{post.title}</h5>
                       <span className="text-sm text-gray-600">{post.date}</span>
                     </div>
-                    <div className="flex justify-between items-center text-sm">
-                      <span>Status: {post.status}</span>
+                    <div className="flex justify-between items-center text-sm py-2">
+                      <span>Status: {post.hired ? 'Hired' : 'Open'}</span>
                       <span>Amount refund status: {post.refundStatus}</span>
                     </div>
                     <div className="flex justify-between items-center text-sm">
-                      <span className="bg-gray-200 px-3 py-1 rounded-full">
+                      <span className="bg-gray-100 px-4 py-2 rounded-full">
                         Post status: {post.status}
                       </span>
-                      <span className="bg-gray-200 px-3 py-1 rounded-full">
-                        {post.paymentStatus}
+                      <span className="bg-gray-100 px-4 py-2 rounded-full">
+                        {post.paymentStatus === 'Paid' ? 'Paid' : 'make it live by completing payment'}
                       </span>
                     </div>
                   </div>

@@ -60,7 +60,7 @@ export default function YourPostsPage() {
       
       <div className="grid gap-6">
         {jobPosts.map((post) => (
-          <div key={post.id} className="bg-white rounded-lg shadow-sm p-6 space-y-4">
+          <div key={post.id} className="bg-white rounded-2xl shadow-sm p-6 space-y-4 border border-gray-100">
             <div className="flex justify-between items-center">
               <h2 className="text-xl font-semibold">{post.title}</h2>
               <span className="text-gray-600">{post.date}</span>
@@ -80,7 +80,7 @@ export default function YourPostsPage() {
                 Post status: {post.status}
               </span>
               <span className="bg-gray-100 px-4 py-2 rounded-full text-sm">
-                {post.paymentStatus}
+                {post.paymentStatus === 'Paid' ? 'Paid' : 'make it live by completing payment'}
               </span>
             </div>
 
