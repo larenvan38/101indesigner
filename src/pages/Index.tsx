@@ -79,7 +79,11 @@ const Index = () => {
                     A task-based job portal where serious designers meet quality opportunities. Show your skills, not just your resume.
                   </p>
 
-                  <Link to="/explore-jobs" className="button-primary inline-block mb-20">
+                  <Link 
+                    to="/explore-jobs" 
+                    state={{ authenticated: isAuthenticated }}
+                    className="button-primary inline-block mb-20"
+                  >
                     Explore Jobs
                   </Link>
 
