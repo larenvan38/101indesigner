@@ -3,6 +3,7 @@ import { ArrowLeftIcon, BriefcaseIcon, SearchIcon, ArrowRightIcon } from "lucide
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useState } from "react";
+import { AuthenticatedNav } from "@/components/AuthenticatedNav";
 
 const ExploreJobs = () => {
   const [showSignInPrompt, setShowSignInPrompt] = useState(false);
@@ -22,11 +23,7 @@ const ExploreJobs = () => {
               </Link>
               <h1 className="font-display text-2xl font-bold">INDesigner</h1>
             </div>
-            <div className="flex items-center gap-6">
-              <Link to="/chat" className="text-gray-600 hover:text-gray-900">Chat</Link>
-              <Link to="/credits" className="text-gray-600 hover:text-gray-900">Credits</Link>
-              <button className="button-primary">Sign In</button>
-            </div>
+            <AuthenticatedNav />
           </div>
         </div>
       </nav>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowLeftIcon, CheckCircle2Icon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { AuthenticatedNav } from "@/components/AuthenticatedNav";
 import {
   Select,
   SelectContent,
@@ -15,10 +16,6 @@ const StartHiring = () => {
   const [numJobs, setNumJobs] = useState<number>(1);
   const [salaryType, setSalaryType] = useState("");
   const [profileType, setProfileType] = useState("");
-
-  const handleGoogleSignIn = () => {
-    window.location.href = "https://accounts.google.com/signin";
-  };
 
   const handleNumJobsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value) || 1;
@@ -36,11 +33,7 @@ const StartHiring = () => {
               </Link>
               <h1 className="font-display text-2xl font-bold">INDesigner</h1>
             </div>
-            <div className="flex items-center gap-6">
-              <Link to="/dashboard" className="text-gray-600 hover:text-gray-900">Dashboard</Link>
-              <Link to="/chat" className="text-gray-600 hover:text-gray-900">Chat</Link>
-              <button className="button-primary">Sign In</button>
-            </div>
+            <AuthenticatedNav />
           </div>
         </div>
       </nav>
@@ -65,17 +58,6 @@ const StartHiring = () => {
             className="space-y-8"
           >
             <div className="feature-card">
-              <h3 className="mb-6">Step 1: Sign in with Google</h3>
-              <p className="text-gray-600 mb-8">
-                To ensure the quality of job postings and verify your identity, please sign in with your Google account.
-              </p>
-              <button 
-                onClick={handleGoogleSignIn}
-                className="button-primary w-full flex items-center justify-center gap-2 mb-8"
-              >
-                Sign in with Google
-              </button>
-
               <h3 className="mb-6">What Describes You Perfectly?</h3>
               <div className="mb-8">
                 <Select value={profileType} onValueChange={setProfileType}>
