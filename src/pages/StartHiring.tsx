@@ -253,6 +253,9 @@ const StartHiring = () => {
             <button type="submit" className="button-primary w-full">
               Submit for Review
             </button>
+            <p className="text-sm text-gray-600 text-center mt-2">
+              After we have approved your job posting, you can pay through my posts section
+            </p>
           </motion.form>
         </div>
       </main>

@@ -19,14 +19,16 @@ export function AuthenticatedNav() {
         </Button>
       </Link>
       <div className="flex items-center gap-4">
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" className="flex items-center gap-2">
           <MessageSquare className="w-5 h-5" />
+          Chats
         </Button>
         <Button variant="ghost" size="icon">
           <Bell className="w-5 h-5" />
         </Button>
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" className="flex items-center gap-2">
           <CreditCard className="w-5 h-5" />
+          Credits
         </Button>
         <Button variant="ghost" size="icon">
           <User className="w-5 h-5" />
