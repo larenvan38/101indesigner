@@ -1,17 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, BriefcaseIcon, SearchIcon, ArrowRightIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { useState } from "react";
 import { AuthenticatedNav } from "@/components/AuthenticatedNav";
 
 const ExploreJobs = () => {
-  const [showSignInPrompt, setShowSignInPrompt] = useState(false);
-
-  const handleSubmitAssignment = () => {
-    setShowSignInPrompt(true);
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
       <nav className="nav-container">
@@ -97,10 +89,7 @@ const ExploreJobs = () => {
                     </div>
                     <div className="flex gap-3">
                       <button className="button-primary py-2">View Assignment</button>
-                      <button 
-                        onClick={handleSubmitAssignment}
-                        className="button-primary py-2 flex items-center gap-2"
-                      >
+                      <button className="button-primary py-2 flex items-center gap-2">
                         Submit Assignment
                         <ArrowRightIcon className="w-4 h-4" />
                       </button>
@@ -148,10 +137,7 @@ const ExploreJobs = () => {
                     </div>
                     <div className="flex gap-3">
                       <button className="button-primary py-2">View Assignment</button>
-                      <button 
-                        onClick={handleSubmitAssignment}
-                        className="button-primary py-2 flex items-center gap-2"
-                      >
+                      <button className="button-primary py-2 flex items-center gap-2">
                         Submit Assignment
                         <ArrowRightIcon className="w-4 h-4" />
                       </button>
@@ -199,10 +185,7 @@ const ExploreJobs = () => {
                     </div>
                     <div className="flex gap-3">
                       <button className="button-primary py-2">View Assignment</button>
-                      <button 
-                        onClick={handleSubmitAssignment}
-                        className="button-primary py-2 flex items-center gap-2"
-                      >
+                      <button className="button-primary py-2 flex items-center gap-2">
                         Submit Assignment
                         <ArrowRightIcon className="w-4 h-4" />
                       </button>
@@ -217,23 +200,6 @@ const ExploreJobs = () => {
           </motion.div>
         </div>
       </main>
-
-      <Dialog open={showSignInPrompt} onOpenChange={setShowSignInPrompt}>
-        <DialogContent className="sm:max-w-md">
-          <div className="text-center p-6">
-            <h3 className="text-lg font-semibold mb-2">Sign In Required</h3>
-            <p className="text-gray-600 mb-4">
-              Please sign in to submit your assignment.
-            </p>
-            <button 
-              className="button-primary w-full"
-              onClick={() => setShowSignInPrompt(false)}
-            >
-              Got it
-            </button>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
