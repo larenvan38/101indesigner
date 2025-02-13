@@ -71,7 +71,7 @@ export default function YourPostsPage() {
                 <span className="text-gray-600">Status: {post.hired ? 'Hired' : 'Open'}</span>
               </div>
               <div className="text-right">
-                <span className="text-gray-600">Amount refund status: {post.refundStatus}</span>
+                <span className="text-gray-600">Refund status: {post.refundStatus}</span>
               </div>
             </div>
             

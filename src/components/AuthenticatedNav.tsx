@@ -85,7 +85,7 @@ export function AuthenticatedNav() {
                     </div>
                     <div className="flex justify-between items-center text-sm py-2">
                       <span>Status: {post.hired ? 'Hired' : 'Open'}</span>
-                      <span>Amount refund status: {post.refundStatus}</span>
+                      <span>Refund status: {post.refundStatus}</span>
                     </div>
                     <div className="flex justify-between items-center text-sm">
                       <span className="bg-white/80 px-4 py-2 rounded-full">
