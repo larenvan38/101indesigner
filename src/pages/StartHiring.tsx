@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, CheckCircle2Icon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -47,13 +46,9 @@ const StartHiring = () => {
             className="text-center mb-12"
           >
             <h1 className="mb-4">Post Your Design Task</h1>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-6">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Create a task-based job posting to find the perfect designer.
             </p>
-            <div className="inline-block bg-white/50 backdrop-blur-sm p-4 rounded-lg shadow-sm">
-              <p className="font-medium text-primary">No spam</p>
-              <p className="text-sm text-gray-600">Refundable ₹2500 deposit ensures a secure hiring process</p>
-            </div>
           </motion.div>
 
           <motion.form
