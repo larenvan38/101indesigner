@@ -71,7 +71,7 @@ const Index = () => {
                     <div className="feature-card">
                       <UsersIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
                       <h3 className="mb-3">Quality Candidates</h3>
-                      <p className="text-gray-600">₹29 submission fee ensures only serious designers apply.</p>
+                      <p className="text-gray-600">Submission fee ensures only serious designers apply.</p>
                     </div>
                     <div className="feature-card">
                       <StarIcon className="w-16 h-16 text-primary mb-6 mx-auto" />

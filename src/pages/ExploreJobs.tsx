@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, BriefcaseIcon, SearchIcon, ArrowRightIcon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -66,61 +65,158 @@ const ExploreJobs = () => {
             transition={{ delay: 0.2 }}
             className="space-y-6"
           >
-            {[1, 2, 3].map((job) => (
-              <div
-                key={job}
-                className="feature-card flex flex-col hover:scale-[1.02]"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="text-left">
-                    <div className="flex items-center gap-4 mb-2">
-                      <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-sm">Verified Agency</span>
+            <div className="feature-card flex flex-col hover:scale-[1.02]">
+              <div className="flex items-start justify-between mb-4">
+                <div className="text-left">
+                  <div className="flex items-center gap-4 mb-2">
+                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-sm">Verified Agency</span>
+                  </div>
+                  <h3 className="mb-2">UI/UX Designer for E-commerce App</h3>
+                  <p className="text-gray-600 mb-4">
+                    Seeking art-focused designer for thumbnail design and brand visuals.
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                    <span>Posted 2 days ago</span>
+                    <span>•</span>
+                    <span>Status: In Progress</span>
+                  </div>
+                </div>
+                <BriefcaseIcon className="w-6 h-6 text-primary flex-shrink-0" />
+              </div>
+              <div className="flex flex-wrap items-center gap-4 mb-4">
+                <span className="tag">Full-time</span>
+                <span className="tag">Remote</span>
+                <span className="tag">Fixed Salary: ₹40,000</span>
+              </div>
+              <div className="border-t border-gray-100 mt-4 pt-4">
+                <div className="flex flex-col gap-2">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <span className="text-sm font-medium">Required Skills:</span>
+                      <div className="flex gap-2 mt-1">
+                        <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Thumbnail Design</span>
+                        <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Brand Design</span>
+                      </div>
                     </div>
-                    <h3 className="mb-2">UI/UX Designer for E-commerce App</h3>
-                    <p className="text-gray-600 mb-4">
-                      Seeking art-focused designer for thumbnail design and brand visuals.
-                    </p>
-                    <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                      <span>Posted 2 days ago</span>
-                      <span>•</span>
-                      <span>Status: In Progress</span>
+                    <div className="flex gap-3">
+                      <button className="button-primary py-2">View Assignment</button>
+                      <button 
+                        onClick={handleSubmitAssignment}
+                        className="button-primary py-2 flex items-center gap-2"
+                      >
+                        Submit Assignment
+                        <ArrowRightIcon className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
-                  <BriefcaseIcon className="w-6 h-6 text-primary flex-shrink-0" />
-                </div>
-                <div className="flex flex-wrap items-center gap-4 mb-4">
-                  <span className="tag">Full-time</span>
-                  <span className="tag">Remote</span>
-                  <span className="tag">Fixed Salary: ₹40,000</span>
-                </div>
-                <div className="border-t border-gray-100 mt-4 pt-4">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <span className="text-sm font-medium">Required Skills:</span>
-                        <div className="flex gap-2 mt-1">
-                          <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Thumbnail Design</span>
-                          <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Brand Design</span>
-                        </div>
-                      </div>
-                      <div className="flex gap-3">
-                        <button className="button-primary py-2">View Assignment</button>
-                        <button 
-                          onClick={handleSubmitAssignment}
-                          className="button-primary py-2 flex items-center gap-2"
-                        >
-                          Submit Assignment
-                          <ArrowRightIcon className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
-                    <div className="text-sm text-gray-600">
-                      Submission Fee: ₹29
-                    </div>
+                  <div className="text-sm text-gray-600">
+                    Submission Fee: ₹99
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div className="feature-card flex flex-col hover:scale-[1.02]">
+              <div className="flex items-start justify-between mb-4">
+                <div className="text-left">
+                  <div className="flex items-center gap-4 mb-2">
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-sm">Startup</span>
+                  </div>
+                  <h3 className="mb-2">Motion Designer for Social Media</h3>
+                  <p className="text-gray-600 mb-4">
+                    Creative motion designer needed for engaging social media content.
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                    <span>Posted 1 day ago</span>
+                    <span>•</span>
+                    <span>Status: Open</span>
+                  </div>
+                </div>
+                <BriefcaseIcon className="w-6 h-6 text-primary flex-shrink-0" />
+              </div>
+              <div className="flex flex-wrap items-center gap-4 mb-4">
+                <span className="tag">Freelance</span>
+                <span className="tag">Remote</span>
+                <span className="tag">Negotiable Salary</span>
+              </div>
+              <div className="border-t border-gray-100 mt-4 pt-4">
+                <div className="flex flex-col gap-2">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <span className="text-sm font-medium">Required Skills:</span>
+                      <div className="flex gap-2 mt-1">
+                        <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Motion Graphics</span>
+                        <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Social Media</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <button className="button-primary py-2">View Assignment</button>
+                      <button 
+                        onClick={handleSubmitAssignment}
+                        className="button-primary py-2 flex items-center gap-2"
+                      >
+                        Submit Assignment
+                        <ArrowRightIcon className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Submission Fee: ₹49
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="feature-card flex flex-col hover:scale-[1.02]">
+              <div className="flex items-start justify-between mb-4">
+                <div className="text-left">
+                  <div className="flex items-center gap-4 mb-2">
+                    <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-sm">Premium Project</span>
+                  </div>
+                  <h3 className="mb-2">Senior Brand Designer</h3>
+                  <p className="text-gray-600 mb-4">
+                    Experienced brand designer needed for complete brand identity project.
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                    <span>Posted 3 hours ago</span>
+                    <span>•</span>
+                    <span>Status: Urgent</span>
+                  </div>
+                </div>
+                <BriefcaseIcon className="w-6 h-6 text-primary flex-shrink-0" />
+              </div>
+              <div className="flex flex-wrap items-center gap-4 mb-4">
+                <span className="tag">Full-time</span>
+                <span className="tag">Hybrid</span>
+                <span className="tag">Fixed Salary: ₹85,000</span>
+              </div>
+              <div className="border-t border-gray-100 mt-4 pt-4">
+                <div className="flex flex-col gap-2">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <span className="text-sm font-medium">Required Skills:</span>
+                      <div className="flex gap-2 mt-1">
+                        <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Brand Identity</span>
+                        <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Visual Design</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <button className="button-primary py-2">View Assignment</button>
+                      <button 
+                        onClick={handleSubmitAssignment}
+                        className="button-primary py-2 flex items-center gap-2"
+                      >
+                        Submit Assignment
+                        <ArrowRightIcon className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Submission Fee: ₹249
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </main>

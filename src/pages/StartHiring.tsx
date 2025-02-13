@@ -86,7 +86,7 @@ const StartHiring = () => {
                     <SelectItem value="startup">Start-Up (Use your startup email)</SelectItem>
                     <SelectItem value="mnc">MNC (Use your company email)</SelectItem>
                     <SelectItem value="agency">Agency (Use your agency email)</SelectItem>
-                    <SelectItem value="individual">Use your YouTube/Instagram email</SelectItem>
+                    <SelectItem value="individual">Individual (Use your public YouTube/Instagram email)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
