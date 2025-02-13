@@ -1,6 +1,6 @@
 
-import { BriefcaseIcon, MessageSquare, Bell, CreditCard, User, FileText, List, Award, MessageCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import { BriefcaseIcon, MessageSquare, Bell, CreditCard, User, FileText, List, Award, MessageCircle, Pencil } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 import {
   Tooltip,
@@ -15,70 +15,42 @@ import {
 } from "./ui/popover";
 import { useState } from "react";
 
-interface SubmittedResult {
-  name: string;
-  assignmentLink: string;
-  portfolio: string;
-  isWinner: boolean;
+interface JobPost {
+  id: number;
+  title: string;
+  date: string;
+  status: string;
+  hired: boolean;
+  refundStatus: string;
+  paymentStatus: string;
 }
 
 export function AuthenticatedNav() {
-  const [showResults, setShowResults] = useState(false);
-  const [submittedResults] = useState<SubmittedResult[]>([
+  const navigate = useNavigate();
+  const [jobPosts] = useState<JobPost[]>([
     {
-      name: "John Doe",
-      assignmentLink: "https://example.com/assignment1",
-      portfolio: "https://portfolio.com/johndoe",
-      isWinner: false
+      id: 1,
+      title: "Post 1",
+      date: "2024-03-20",
+      status: "Approved",
+      hired: true,
+      refundStatus: "Completed",
+      paymentStatus: "Paid"
+    },
+    {
+      id: 2,
+      title: "Post 2",
+      date: "2024-03-21",
+      status: "Approved",
+      hired: true,
+      refundStatus: "Completed",
+      paymentStatus: "Paid"
     }
   ]);
 
-  const YourPostsTooltip = () => (
-    <div className="w-64 p-2">
-      <div className="flex flex-col space-y-2">
-        <div className="flex justify-between items-center">
-          <h4 className="font-medium">Your Posts</h4>
-          <Button variant="outline" size="sm" onClick={() => setShowResults(true)}>
-            Open Further
-          </Button>
-        </div>
-        {showResults && (
-          <div className="mt-2">
-            <div className="flex justify-between gap-2">
-              <Button variant="outline" size="sm" className="flex-1">
-                Results
-              </Button>
-              <Button variant="outline" size="sm" className="flex-1">
-                Winners List
-              </Button>
-              <Button variant="outline" size="sm" className="flex-1">
-                Winner Chats
-              </Button>
-            </div>
-            {showResults && (
-              <div className="mt-4 space-y-4">
-                {submittedResults.map((result, index) => (
-                  <div key={index} className="border p-3 rounded-lg">
-                    <p className="font-medium">{result.name}</p>
-                    <div className="flex gap-2 mt-2">
-                      <Button size="sm" variant="outline">Portfolio</Button>
-                      <Button size="sm" variant="outline">Resume</Button>
-                      <Button size="sm" variant="outline">Chat</Button>
-                      {!result.isWinner && (
-                        <Button size="sm" variant="secondary">
-                          Make Winner
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-    </div>
-  );
+  const handleOpenFurther = () => {
+    navigate('/your-posts');
+  };
 
   return (
     <TooltipProvider>
@@ -96,8 +68,37 @@ export function AuthenticatedNav() {
               Your Posts
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-80">
-            <YourPostsTooltip />
+          <PopoverContent className="w-96">
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <h4 className="font-medium">Your Posts</h4>
+                <Button variant="outline" size="sm" onClick={handleOpenFurther}>
+                  Open Further
+                </Button>
+              </div>
+              <div className="space-y-3">
+                {jobPosts.map((post) => (
+                  <div key={post.id} className="bg-secondary/50 rounded-lg p-4 space-y-2">
+                    <div className="flex justify-between items-center">
+                      <h5 className="font-medium">{post.title}</h5>
+                      <span className="text-sm text-gray-600">{post.date}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span>Status: {post.status}</span>
+                      <span>Amount refund status: {post.refundStatus}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="bg-gray-200 px-3 py-1 rounded-full">
+                        Post status: {post.status}
+                      </span>
+                      <span className="bg-gray-200 px-3 py-1 rounded-full">
+                        {post.paymentStatus}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </PopoverContent>
         </Popover>
         <div className="flex items-center gap-4">
@@ -116,9 +117,9 @@ export function AuthenticatedNav() {
               </Button>
             </TooltipTrigger>
             <TooltipContent>
-              <div className="p-2">
+              <div className="p-2 space-y-2">
                 <p>Credits: xxx</p>
-                <Button variant="link" className="mt-1 p-0">
+                <Button variant="default" size="sm" className="w-full">
                   Purchase now
                 </Button>
               </div>
@@ -132,6 +133,12 @@ export function AuthenticatedNav() {
             </TooltipTrigger>
             <TooltipContent>
               <div className="space-y-2 p-2">
+                <div className="flex justify-between items-center">
+                  <p className="font-medium">Profile Details</p>
+                  <Button variant="ghost" size="sm">
+                    <Pencil className="w-4 h-4" />
+                  </Button>
+                </div>
                 <p>Name: John Doe</p>
                 <p>Mobile: +1234567890</p>
                 <p>Email: john@example.com</p>
