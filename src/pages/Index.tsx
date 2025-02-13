@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BriefcaseIcon, UsersIcon, StarIcon, ShieldCheckIcon, SparklesIcon, CreditCardIcon } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { BorderBeam } from "@/components/ui/border-beam";
 
 const Index = () => {
   const [currentView, setCurrentView] = useState<'jobs' | 'employers'>('jobs');
@@ -17,10 +16,9 @@ const Index = () => {
             <div>
               <Link 
                 to="/start-hiring" 
-                className="group relative inline-flex h-12 items-center justify-center rounded-md border border-slate-800 bg-white px-6 font-medium text-slate-800 transition-colors hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+                className="relative inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
               >
                 Sign In
-                <BorderBeam duration={8} size={100} />
               </Link>
             </div>
           </div>

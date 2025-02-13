@@ -88,9 +88,9 @@ export default {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0)" },
         },
-        "move-beam": {
+        shimmer: {
           "100%": {
-            transform: "rotate(360deg)",
+            backgroundPosition: "-200% 0",
           },
         },
       },
@@ -100,6 +100,7 @@ export default {
         fadeIn: "fadeIn 0.5s ease-out",
         slideUp: "slideUp 0.5s ease-out",
         slideIn: "slideIn 0.3s ease-out",
+        shimmer: "shimmer 2s infinite",
       },
     },
   },
