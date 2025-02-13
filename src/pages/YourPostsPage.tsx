@@ -60,7 +60,7 @@ export default function YourPostsPage() {
       
       <div className="grid gap-6">
         {jobPosts.map((post) => (
-          <div key={post.id} className="bg-white rounded-2xl shadow-sm p-6 space-y-4 border border-gray-100">
+          <div key={post.id} className="bg-[#F1F0FB] rounded-2xl shadow-sm p-6 space-y-4 border border-gray-100">
             <div className="flex justify-between items-center">
               <h2 className="text-xl font-semibold">{post.title}</h2>
               <span className="text-gray-600">{post.date}</span>
@@ -76,10 +76,10 @@ export default function YourPostsPage() {
             </div>
             
             <div className="flex justify-between items-center">
-              <span className="bg-gray-100 px-4 py-2 rounded-full text-sm">
+              <span className="bg-white/80 px-4 py-2 rounded-full text-sm">
                 Post status: {post.status}
               </span>
-              <span className="bg-gray-100 px-4 py-2 rounded-full text-sm">
+              <span className="bg-white/80 px-4 py-2 rounded-full text-sm">
                 {post.paymentStatus === 'Paid' ? 'Paid' : 'make it live by completing payment'}
               </span>
             </div>
@@ -104,7 +104,7 @@ export default function YourPostsPage() {
             {showResults && activePost?.id === post.id && (
               <div className="mt-4 space-y-4">
                 {post.results.map((result, index) => (
-                  <div key={index} className="border p-4 rounded-lg">
+                  <div key={index} className="border p-4 rounded-lg bg-white">
                     <p className="font-medium">{result.name}</p>
                     <div className="flex gap-2 mt-2">
                       <Button size="sm" variant="outline">Portfolio</Button>

@@ -78,7 +78,7 @@ export function AuthenticatedNav() {
               </div>
               <div className="space-y-3">
                 {jobPosts.map((post) => (
-                  <div key={post.id} className="bg-white rounded-2xl p-4 space-y-2 shadow-sm border border-gray-100">
+                  <div key={post.id} className="bg-[#F1F0FB] rounded-2xl p-4 space-y-2 shadow-sm border border-gray-100">
                     <div className="flex justify-between items-center">
                       <h5 className="font-medium text-lg">{post.title}</h5>
                       <span className="text-sm text-gray-600">{post.date}</span>
@@ -88,10 +88,10 @@ export function AuthenticatedNav() {
                       <span>Amount refund status: {post.refundStatus}</span>
                     </div>
                     <div className="flex justify-between items-center text-sm">
-                      <span className="bg-gray-100 px-4 py-2 rounded-full">
+                      <span className="bg-white/80 px-4 py-2 rounded-full">
                         Post status: {post.status}
                       </span>
-                      <span className="bg-gray-100 px-4 py-2 rounded-full">
+                      <span className="bg-white/80 px-4 py-2 rounded-full">
                         {post.paymentStatus === 'Paid' ? 'Paid' : 'make it live by completing payment'}
                       </span>
                     </div>
