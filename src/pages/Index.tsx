@@ -156,23 +156,12 @@ const Index = () => {
                     Skip the resume screening and find exceptional designers through real-world tasks. Our platform ensures you only see submissions from committed professionals.
                   </p>
 
-                  {!isAuthenticated ? (
-                    <Button 
-                      onClick={handleSignInClick} 
-                      variant="outline" 
-                      className="mb-20 flex items-center gap-2"
-                    >
-                      <img src="https://www.google.com/favicon.ico" alt="Google" className="w-4 h-4" />
-                      Sign in with Google to continue
-                    </Button>
-                  ) : (
-                    <Link 
-                      to="/start-hiring"
-                      className="button-primary inline-block mb-20"
-                    >
-                      Start Hiring Now
-                    </Link>
-                  )}
+                  <Link 
+                    to="/start-hiring"
+                    className="button-primary inline-block mb-20"
+                  >
+                    Start Hiring Now
+                  </Link>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                     <div className="feature-card">
