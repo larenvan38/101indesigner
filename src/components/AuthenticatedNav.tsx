@@ -61,7 +61,7 @@ export function AuthenticatedNav() {
             Applied Jobs
           </Button>
         </Link>
-        <HoverCard>
+        <HoverCard openDelay={0} closeDelay={0}>
           <HoverCardTrigger asChild>
             <Button variant="ghost" className="flex items-center gap-2">
               <FileText className="w-5 h-5" />
