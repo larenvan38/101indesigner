@@ -3,6 +3,7 @@ import { ArrowLeftIcon, CheckCircle2Icon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AuthenticatedNav } from "@/components/AuthenticatedNav";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -16,10 +17,16 @@ const StartHiring = () => {
   const [numJobs, setNumJobs] = useState<number>(1);
   const [salaryType, setSalaryType] = useState("");
   const [profileType, setProfileType] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleNumJobsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value) || 1;
     setNumJobs(Math.max(1, value)); // Ensure minimum of 1 job
+  };
+
+  const handleSignInClick = () => {
+    // Handle Google sign in here
+    setIsAuthenticated(true);
   };
 
   return (
@@ -58,6 +65,18 @@ const StartHiring = () => {
             className="space-y-8"
           >
             <div className="feature-card">
+              <div className="bg-white/50 backdrop-blur-sm p-6 rounded-lg shadow-sm max-w-md mx-auto mb-8">
+                <h3 className="font-medium mb-4">First, sign in to get started</h3>
+                <Button 
+                  onClick={handleSignInClick} 
+                  variant="outline" 
+                  className="w-full flex items-center justify-center gap-2"
+                >
+                  <img src="https://www.google.com/favicon.ico" alt="Google" className="w-4 h-4" />
+                  Sign in with Google
+                </Button>
+              </div>
+
               <h3 className="mb-6">What Describes You Perfectly?</h3>
               <div className="mb-8">
                 <Select value={profileType} onValueChange={setProfileType}>
