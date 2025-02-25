@@ -65,16 +65,21 @@ const StartHiring = () => {
             className="space-y-8"
           >
             <div className="feature-card">
-              <div className="bg-white/50 backdrop-blur-sm p-6 rounded-lg shadow-sm max-w-md mx-auto mb-8">
-                <h3 className="font-medium mb-4">First, sign in to get started</h3>
-                <Button 
-                  onClick={handleSignInClick} 
-                  variant="outline" 
-                  className="w-full flex items-center justify-center gap-2"
-                >
-                  <img src="https://www.google.com/favicon.ico" alt="Google" className="w-4 h-4" />
-                  Sign in with Google
-                </Button>
+              <div className="bg-accent/30 p-8 rounded-xl mb-12 text-center">
+                <h3 className="text-xl font-display mb-6">Welcome to INDesigner Hiring</h3>
+                <div className="max-w-md mx-auto">
+                  <p className="text-gray-600 mb-6">
+                    Sign in with your Google account to start posting design tasks and find talented designers.
+                  </p>
+                  <Button 
+                    onClick={handleSignInClick} 
+                    variant="outline" 
+                    className="w-full bg-white hover:bg-accent/50 border-gray-200 shadow-sm py-6 text-base font-medium flex items-center justify-center gap-3 transition-all duration-300"
+                  >
+                    <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5" />
+                    Continue with Google
+                  </Button>
+                </div>
               </div>
 
               <h3 className="mb-6">What Describes You Perfectly?</h3>
