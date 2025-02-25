@@ -201,15 +201,6 @@ const StartHiring = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Assignment Link *</label>
-                  <input
-                    type="url"
-                    placeholder="Google Drive, Figma links"
-                    className="input-field"
-                  />
-                </div>
-
-                <div>
                   <label className="block text-sm font-medium mb-2">Additional Notes (Optional)</label>
                   <textarea
                     placeholder="Any extra information for candidates"

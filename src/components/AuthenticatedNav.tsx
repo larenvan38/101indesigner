@@ -53,7 +53,7 @@ export function AuthenticatedNav() {
   };
 
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={0}>
       <div className="flex items-center gap-6">
         <Link to="/applied-jobs">
           <Button variant="ghost" className="flex items-center gap-2">
@@ -72,7 +72,12 @@ export function AuthenticatedNav() {
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <h4 className="font-medium">Your Posts</h4>
-                <Button variant="outline" size="sm" onClick={handleOpenFurther}>
+                <Button 
+                  variant="default"
+                  size="sm" 
+                  onClick={handleOpenFurther}
+                  className="bg-primary hover:bg-primary/90 text-white"
+                >
                   Open Further
                 </Button>
               </div>
