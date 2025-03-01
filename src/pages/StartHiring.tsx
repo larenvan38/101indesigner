@@ -62,10 +62,6 @@ const StartHiring = () => {
             transition={{ delay: 0.2 }}
             className="space-y-8"
           >
-            <div className="bg-accent p-4 rounded-md mb-4 text-center">
-              <p className="font-medium">Please sign in first to continue with your job posting</p>
-            </div>
-            
             <ProfileSection 
               profileType={profileType}
               setProfileType={setProfileType}

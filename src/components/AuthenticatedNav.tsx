@@ -1,23 +1,24 @@
 
-import { Bell, CreditCard, MessageSquare, User } from "lucide-react";
+import { Briefcase, FileText, MessageSquare, Bell, CreditCard, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { HoverTooltip } from "./ui/hover-tooltip";
 
 export const AuthenticatedNav = () => {
   return (
-    <div className="flex items-center space-x-5">
+    <div className="flex items-center space-x-6">
       <HoverTooltip
         content={
           <div className="w-48 p-2">
-            <h4 className="font-semibold mb-1">Your Applied Jobs</h4>
+            <h4 className="font-semibold mb-1">Applied Jobs</h4>
             <p className="text-xs text-gray-500">
               Track your applications & submissions
             </p>
           </div>
         }
       >
-        <Link to="/applied-jobs" className="text-gray-700 hover:text-primary">
-          <CreditCard className="w-6 h-6" />
+        <Link to="/applied-jobs" className="text-gray-700 hover:text-primary flex flex-col items-center">
+          <Briefcase className="w-6 h-6" />
+          <span className="text-xs mt-1">Applied Jobs</span>
         </Link>
       </HoverTooltip>
 
@@ -31,8 +32,25 @@ export const AuthenticatedNav = () => {
           </div>
         }
       >
-        <Link to="/your-posts" className="text-gray-700 hover:text-primary">
+        <Link to="/your-posts" className="text-gray-700 hover:text-primary flex flex-col items-center">
+          <FileText className="w-6 h-6" />
+          <span className="text-xs mt-1">Your Posts</span>
+        </Link>
+      </HoverTooltip>
+
+      <HoverTooltip
+        content={
+          <div className="w-48 p-2">
+            <h4 className="font-semibold mb-1">Chats</h4>
+            <p className="text-xs text-gray-500">
+              Messages with designers & clients
+            </p>
+          </div>
+        }
+      >
+        <Link to="/chats" className="text-gray-700 hover:text-primary flex flex-col items-center">
           <MessageSquare className="w-6 h-6" />
+          <span className="text-xs mt-1">Chats</span>
         </Link>
       </HoverTooltip>
 
@@ -48,6 +66,22 @@ export const AuthenticatedNav = () => {
       >
         <Link to="/notifications" className="text-gray-700 hover:text-primary">
           <Bell className="w-6 h-6" />
+        </Link>
+      </HoverTooltip>
+
+      <HoverTooltip
+        content={
+          <div className="w-48 p-2">
+            <h4 className="font-semibold mb-1">Credits</h4>
+            <p className="text-xs text-gray-500">
+              Manage your credits & payments
+            </p>
+          </div>
+        }
+      >
+        <Link to="/credits" className="text-gray-700 hover:text-primary flex flex-col items-center">
+          <CreditCard className="w-6 h-6" />
+          <span className="text-xs mt-1">Credits</span>
         </Link>
       </HoverTooltip>
 
