@@ -9,6 +9,9 @@ import ExploreJobs from "./pages/ExploreJobs";
 import StartHiring from "./pages/StartHiring";
 import NotFound from "./pages/NotFound";
 import YourPostsPage from "./pages/YourPostsPage";
+import SignedInPage from "./pages/SignedInPage";
+import AuthenticatedExploreJobs from "./pages/AuthenticatedExploreJobs";
+import PostDesignTask from "./pages/PostDesignTask";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +26,9 @@ const App = () => (
           <Route path="/explore-jobs" element={<ExploreJobs />} />
           <Route path="/start-hiring" element={<StartHiring />} />
           <Route path="/your-posts" element={<YourPostsPage />} />
+          <Route path="/signed-in" element={<SignedInPage />} />
+          <Route path="/authenticated-explore-jobs" element={<AuthenticatedExploreJobs />} />
+          <Route path="/post-design-task" element={<PostDesignTask />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

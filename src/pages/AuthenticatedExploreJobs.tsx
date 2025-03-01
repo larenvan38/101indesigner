@@ -2,36 +2,21 @@
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, BriefcaseIcon, SearchIcon, ArrowRightIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { AuthenticatedNav } from "@/components/AuthenticatedNav";
 
-const ExploreJobs = () => {
-  const [showSignInPrompt, setShowSignInPrompt] = useState(false);
-
-  const handleSignInClick = () => {
-    // In a real app, this would trigger a sign-in flow
-    setShowSignInPrompt(true);
-  };
-
-  const handleSubmitAssignment = () => {
-    setShowSignInPrompt(true);
-  };
-
+const AuthenticatedExploreJobs = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
       <nav className="nav-container">
         <div className="section-container py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <Link to="/signed-in" className="text-gray-600 hover:text-gray-900 transition-colors">
                 <ArrowLeftIcon className="w-6 h-6" />
               </Link>
               <h1 className="font-display text-2xl font-bold">INDesigner</h1>
             </div>
-            <Button onClick={handleSignInClick} variant="outline">
-              Sign In
-            </Button>
+            <AuthenticatedNav />
           </div>
         </div>
       </nav>
@@ -105,10 +90,7 @@ const ExploreJobs = () => {
                     </div>
                     <div className="flex gap-3">
                       <button className="button-primary py-2">View Assignment</button>
-                      <button 
-                        onClick={handleSubmitAssignment}
-                        className="button-primary py-2 flex items-center gap-2"
-                      >
+                      <button className="button-primary py-2 flex items-center gap-2">
                         Submit Assignment
                         <ArrowRightIcon className="w-4 h-4" />
                       </button>
@@ -156,7 +138,7 @@ const ExploreJobs = () => {
                     </div>
                     <div className="flex gap-3">
                       <button className="button-primary py-2">View Assignment</button>
-                      <button onClick={handleSubmitAssignment} className="button-primary py-2 flex items-center gap-2">
+                      <button className="button-primary py-2 flex items-center gap-2">
                         Submit Assignment
                         <ArrowRightIcon className="w-4 h-4" />
                       </button>
@@ -204,7 +186,7 @@ const ExploreJobs = () => {
                     </div>
                     <div className="flex gap-3">
                       <button className="button-primary py-2">View Assignment</button>
-                      <button onClick={handleSubmitAssignment} className="button-primary py-2 flex items-center gap-2">
+                      <button className="button-primary py-2 flex items-center gap-2">
                         Submit Assignment
                         <ArrowRightIcon className="w-4 h-4" />
                       </button>
@@ -219,22 +201,8 @@ const ExploreJobs = () => {
           </motion.div>
         </div>
       </main>
-
-      <Dialog open={showSignInPrompt} onOpenChange={setShowSignInPrompt}>
-        <DialogContent className="sm:max-w-md">
-          <div className="text-center p-6">
-            <h3 className="text-lg font-semibold mb-2">Sign In Required</h3>
-            <p className="text-gray-600 mb-4">
-              Please sign in to submit your assignment or explore more jobs.
-            </p>
-            <Link to="/" className="button-primary w-full inline-block text-center">
-              Sign In
-            </Link>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
 
-export default ExploreJobs;
+export default AuthenticatedExploreJobs;

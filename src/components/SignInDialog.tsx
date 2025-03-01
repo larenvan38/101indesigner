@@ -2,14 +2,24 @@
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface SignInDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  onContinue: () => void;
+  onContinue?: () => void;
 }
 
 export function SignInDialog({ open, onOpenChange, onContinue }: SignInDialogProps) {
+  const navigate = useNavigate();
+  
+  const handleContinue = () => {
+    if (onContinue) {
+      onContinue();
+    }
+    navigate('/signed-in');
+  };
+  
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
@@ -23,7 +33,7 @@ export function SignInDialog({ open, onOpenChange, onContinue }: SignInDialogPro
           <CheckCircle className="w-16 h-16 text-green-500" />
         </div>
         <DialogFooter>
-          <Button onClick={onContinue} className="w-full">
+          <Button onClick={handleContinue} className="w-full">
             Continue
           </Button>
         </DialogFooter>

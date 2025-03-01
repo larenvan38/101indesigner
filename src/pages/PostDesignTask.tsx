@@ -20,12 +20,12 @@ const PostDesignTask = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
+    <div className="min-h-screen bg-white">
       <nav className="nav-container">
         <div className="section-container py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <Link to="/employer-dashboard" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <Link to="/signed-in" className="text-gray-600 hover:text-gray-900 transition-colors">
                 <ArrowLeftIcon className="w-6 h-6" />
               </Link>
               <h1 className="font-display text-2xl font-bold">INDesigner</h1>
@@ -35,15 +35,15 @@ const PostDesignTask = () => {
         </div>
       </nav>
 
-      <main className="section-container pt-32">
-        <div className="max-w-4xl mx-auto">
+      <main className="section-container pt-16 pb-16">
+        <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
-            <h1 className="mb-4">Post Your Design Task</h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h1 className="text-3xl font-bold mb-4">Post Your Design Task</h1>
+            <p className="text-gray-600">
               Create a task-based job posting to find the perfect designer.
             </p>
           </motion.div>
@@ -73,7 +73,7 @@ const PostDesignTask = () => {
             <SecurityDepositSection numJobs={numJobs} />
 
             <div className="space-y-4">
-              <button type="submit" className="button-primary w-full text-lg">
+              <button type="submit" className="button-primary w-full text-lg py-3">
                 Submit for Review
               </button>
               <p className="text-gray-600 text-center text-sm mt-6">

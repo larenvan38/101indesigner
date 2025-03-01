@@ -1,27 +1,12 @@
+
 import { motion, AnimatePresence } from "framer-motion";
 import { BriefcaseIcon, UsersIcon, StarIcon, ShieldCheckIcon, SparklesIcon, CreditCardIcon } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { SignInDialog } from "@/components/SignInDialog";
 import { AuthenticatedNav } from "@/components/AuthenticatedNav";
-import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
 
-const Index = () => {
+const SignedInPage = () => {
   const [currentView, setCurrentView] = useState<'jobs' | 'employers'>('jobs');
-  const [isSignInDialogOpen, setIsSignInDialogOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const navigate = useNavigate();
-
-  const handleSignInClick = () => {
-    setIsSignInDialogOpen(true);
-  };
-
-  const handleContinue = () => {
-    setIsSignInDialogOpen(false);
-    setIsAuthenticated(true);
-    navigate('/signed-in');
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
@@ -29,22 +14,10 @@ const Index = () => {
         <div className="section-container py-4">
           <div className="flex items-center justify-between">
             <h1 className="font-display text-2xl font-bold">INDesigner</h1>
-            {!isAuthenticated ? (
-              <Button onClick={handleSignInClick} variant="outline">
-                Sign In
-              </Button>
-            ) : (
-              <AuthenticatedNav />
-            )}
+            <AuthenticatedNav />
           </div>
         </div>
       </nav>
-
-      <SignInDialog 
-        open={isSignInDialogOpen} 
-        onOpenChange={setIsSignInDialogOpen}
-        onContinue={handleContinue}
-      />
 
       <main className="section-container pt-32">
         <div className="flex items-center justify-center gap-4 mb-16">
@@ -83,8 +56,7 @@ const Index = () => {
                   </p>
 
                   <Link 
-                    to="/explore-jobs" 
-                    state={{ authenticated: isAuthenticated }}
+                    to="/authenticated-explore-jobs" 
                     className="button-primary inline-block mb-20"
                   >
                     Explore Jobs
@@ -160,10 +132,10 @@ const Index = () => {
                   </p>
 
                   <Link 
-                    to="/start-hiring"
+                    to="/post-design-task"
                     className="button-primary inline-block mb-20"
                   >
-                    Start Hiring Now
+                    Post Design Task
                   </Link>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
@@ -225,4 +197,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default SignedInPage;

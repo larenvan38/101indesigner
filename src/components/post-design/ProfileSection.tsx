@@ -10,11 +10,24 @@ import {
 interface ProfileSectionProps {
   profileType: string;
   setProfileType: (value: string) => void;
+  isAuthenticated?: boolean;
 }
 
-export const ProfileSection = ({ profileType, setProfileType }: ProfileSectionProps) => {
+export const ProfileSection = ({ 
+  profileType, 
+  setProfileType, 
+  isAuthenticated = true 
+}: ProfileSectionProps) => {
   return (
     <div className="feature-card">
+      {!isAuthenticated && (
+        <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-6">
+          <p className="text-sm text-yellow-700 font-medium">
+            Please sign in first to post your design task
+          </p>
+        </div>
+      )}
+      
       <h3 className="mb-6">What Describes You Perfectly?</h3>
       <div className="mb-8">
         <Select value={profileType} onValueChange={setProfileType}>

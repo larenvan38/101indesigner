@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ArrowLeftIcon } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,18 +9,23 @@ const StartHiring = () => {
 
   const handleSignInClick = () => {
     // Handle Google sign in here
-    navigate('/employer-dashboard');
+    navigate('/signed-in');
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
       <nav className="nav-container">
         <div className="section-container py-4">
-          <div className="flex items-center gap-4">
-            <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
-              <ArrowLeftIcon className="w-6 h-6" />
-            </Link>
-            <h1 className="font-display text-2xl font-bold">INDesigner</h1>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+                <ArrowLeftIcon className="w-6 h-6" />
+              </Link>
+              <h1 className="font-display text-2xl font-bold">INDesigner</h1>
+            </div>
+            <Button onClick={handleSignInClick} variant="outline">
+              Sign In
+            </Button>
           </div>
         </div>
       </nav>
@@ -31,9 +37,9 @@ const StartHiring = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <h1 className="mb-4">Start Hiring Designers</h1>
+            <h1 className="mb-4">Post Your Design Task</h1>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Connect with talented designers and find the perfect match for your projects.
+              Create a task-based job posting to find the perfect designer.
             </p>
           </motion.div>
 
