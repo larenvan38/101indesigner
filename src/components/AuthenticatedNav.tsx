@@ -51,7 +51,7 @@ export const AuthenticatedNav = () => {
             
             <div className="space-y-3">
               {mockPostsData.map(post => (
-                <div key={post.id} className="bg-[#F1F0F8]/80 rounded-lg p-4 border border-gray-100">
+                <div key={post.id} className="bg-[#F1F0F8] rounded-lg p-4 border border-gray-100 shadow-sm mb-3">
                   <div className="flex justify-between items-center mb-2">
                     <h5 className="font-medium">{post.title}</h5>
                     <span className="text-sm text-gray-600">{post.date}</span>
