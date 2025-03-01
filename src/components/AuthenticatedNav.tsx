@@ -2,6 +2,7 @@
 import { Briefcase, FileText, MessageSquare, Bell, CreditCard, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { HoverTooltip } from "./ui/hover-tooltip";
+import { Button } from "./ui/button";
 
 export const AuthenticatedNav = () => {
   return (
@@ -29,6 +30,14 @@ export const AuthenticatedNav = () => {
             <p className="text-xs text-gray-500">
               Manage your job postings & applications
             </p>
+            <Button 
+              size="sm" 
+              variant="outline" 
+              className="mt-2 w-full"
+              onClick={() => window.location.href = "/your-posts"}
+            >
+              Open Further
+            </Button>
           </div>
         }
       >
@@ -76,6 +85,16 @@ export const AuthenticatedNav = () => {
             <p className="text-xs text-gray-500">
               Manage your credits & payments
             </p>
+            <div className="mt-2">
+              <p className="font-medium">Credits: xxx</p>
+              <Button 
+                variant="default" 
+                size="sm" 
+                className="mt-2 w-full bg-black text-white hover:bg-black/90"
+              >
+                Purchase now
+              </Button>
+            </div>
           </div>
         }
       >
@@ -87,11 +106,21 @@ export const AuthenticatedNav = () => {
 
       <HoverTooltip
         content={
-          <div className="w-48 p-2">
-            <h4 className="font-semibold mb-1">Profile</h4>
-            <p className="text-xs text-gray-500">
-              Manage your account & settings
-            </p>
+          <div className="w-64 p-3">
+            <div className="flex justify-between items-center mb-3">
+              <h4 className="font-semibold">Profile Details</h4>
+              <Button variant="ghost" size="sm" className="h-6 w-6 p-0">
+                <FileText className="h-4 w-4" />
+              </Button>
+            </div>
+            <div className="space-y-2 text-sm">
+              <p><span className="font-medium">Name:</span> John Doe</p>
+              <p><span className="font-medium">Mobile:</span> +1234567890</p>
+              <p><span className="font-medium">Email:</span> john@example.com</p>
+              <p><span className="font-medium">Resume:</span> profile.pdf</p>
+              <p><span className="font-medium">Portfolio:</span> https://portfolio.com</p>
+              <p><span className="font-medium">LinkedIn:</span> https://linkedin.com/in/john</p>
+            </div>
           </div>
         }
       >
