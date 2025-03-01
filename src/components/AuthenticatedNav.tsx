@@ -1,5 +1,5 @@
 
-import { Briefcase, FileText, MessageSquare, Bell, CreditCard, User } from "lucide-react";
+import { Briefcase, FileText, MessageSquare, Bell, CreditCard, User, Pencil } from "lucide-react";
 import { Link } from "react-router-dom";
 import { HoverTooltip } from "./ui/hover-tooltip";
 import { Button } from "./ui/button";
@@ -11,13 +11,10 @@ export const AuthenticatedNav = () => {
         content={
           <div className="w-48 p-2">
             <h4 className="font-semibold mb-1">Applied Jobs</h4>
-            <p className="text-xs text-gray-500">
-              Track your applications & submissions
-            </p>
           </div>
         }
       >
-        <Link to="/applied-jobs" className="text-gray-700 hover:text-primary flex flex-col items-center">
+        <Link to="/applied-jobs" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2 flex flex-col items-center transition-colors">
           <Briefcase className="w-6 h-6" />
           <span className="text-xs mt-1">Applied Jobs</span>
         </Link>
@@ -27,9 +24,6 @@ export const AuthenticatedNav = () => {
         content={
           <div className="w-48 p-2">
             <h4 className="font-semibold mb-1">Your Posts</h4>
-            <p className="text-xs text-gray-500">
-              Manage your job postings & applications
-            </p>
             <Button 
               size="sm" 
               variant="outline" 
@@ -41,7 +35,7 @@ export const AuthenticatedNav = () => {
           </div>
         }
       >
-        <Link to="/your-posts" className="text-gray-700 hover:text-primary flex flex-col items-center">
+        <Link to="/your-posts" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2 flex flex-col items-center transition-colors">
           <FileText className="w-6 h-6" />
           <span className="text-xs mt-1">Your Posts</span>
         </Link>
@@ -51,13 +45,10 @@ export const AuthenticatedNav = () => {
         content={
           <div className="w-48 p-2">
             <h4 className="font-semibold mb-1">Chats</h4>
-            <p className="text-xs text-gray-500">
-              Messages with designers & clients
-            </p>
           </div>
         }
       >
-        <Link to="/chats" className="text-gray-700 hover:text-primary flex flex-col items-center">
+        <Link to="/chats" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2 flex flex-col items-center transition-colors">
           <MessageSquare className="w-6 h-6" />
           <span className="text-xs mt-1">Chats</span>
         </Link>
@@ -67,13 +58,10 @@ export const AuthenticatedNav = () => {
         content={
           <div className="w-48 p-2">
             <h4 className="font-semibold mb-1">Notifications</h4>
-            <p className="text-xs text-gray-500">
-              Check updates & alerts
-            </p>
           </div>
         }
       >
-        <Link to="/notifications" className="text-gray-700 hover:text-primary">
+        <Link to="/notifications" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2">
           <Bell className="w-6 h-6" />
         </Link>
       </HoverTooltip>
@@ -82,9 +70,6 @@ export const AuthenticatedNav = () => {
         content={
           <div className="w-48 p-2">
             <h4 className="font-semibold mb-1">Credits</h4>
-            <p className="text-xs text-gray-500">
-              Manage your credits & payments
-            </p>
             <div className="mt-2">
               <p className="font-medium">Credits: xxx</p>
               <Button 
@@ -98,7 +83,7 @@ export const AuthenticatedNav = () => {
           </div>
         }
       >
-        <Link to="/credits" className="text-gray-700 hover:text-primary flex flex-col items-center">
+        <Link to="/credits" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2 flex flex-col items-center transition-colors">
           <CreditCard className="w-6 h-6" />
           <span className="text-xs mt-1">Credits</span>
         </Link>
@@ -110,7 +95,7 @@ export const AuthenticatedNav = () => {
             <div className="flex justify-between items-center mb-3">
               <h4 className="font-semibold">Profile Details</h4>
               <Button variant="ghost" size="sm" className="h-6 w-6 p-0">
-                <FileText className="h-4 w-4" />
+                <Pencil className="h-4 w-4" />
               </Button>
             </div>
             <div className="space-y-2 text-sm">
@@ -124,7 +109,7 @@ export const AuthenticatedNav = () => {
           </div>
         }
       >
-        <Link to="/profile" className="text-gray-700 hover:text-primary">
+        <Link to="/profile" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2">
           <User className="w-6 h-6" />
         </Link>
       </HoverTooltip>
