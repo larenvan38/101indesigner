@@ -21,8 +21,8 @@ const StartHiring = () => {
   };
 
   const handleSignInClick = () => {
-    // Handle Google sign in here
-    navigate('/signed-in');
+    // Redirect to index page instead of signed-in page
+    navigate('/');
   };
 
   return (
@@ -43,14 +43,14 @@ const StartHiring = () => {
         </div>
       </nav>
 
-      <main className="section-container pt-16 pb-16">
+      <main className="section-container pt-24 pb-16">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-8"
+            className="mb-4"
           >
-            <h1 className="text-3xl font-bold mb-4">Post Your Design Task</h1>
+            <h1 className="text-3xl font-bold mb-2">Post Your Design Task</h1>
             <p className="text-gray-600">
               Create a task-based job posting to find the perfect designer.
             </p>
@@ -62,6 +62,10 @@ const StartHiring = () => {
             transition={{ delay: 0.2 }}
             className="space-y-8"
           >
+            <div className="bg-accent p-4 rounded-md mb-4 text-center">
+              <p className="font-medium">Please sign in first to continue with your job posting</p>
+            </div>
+            
             <ProfileSection 
               profileType={profileType}
               setProfileType={setProfileType}
