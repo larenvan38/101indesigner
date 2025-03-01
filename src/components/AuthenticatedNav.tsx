@@ -36,7 +36,7 @@ export const AuthenticatedNav = () => {
 
       <HoverTooltip
         content={
-          <div className="w-[460px] p-4 bg-[#F1F0F8]">
+          <div className="w-[460px] p-4 bg-white">
             <div className="flex justify-between items-center mb-4">
               <h4 className="font-semibold text-lg">Your Posts</h4>
               <Button 
@@ -49,9 +49,9 @@ export const AuthenticatedNav = () => {
               </Button>
             </div>
             
-            <div className="space-y-3">
+            <div className="space-y-4">
               {mockPostsData.map(post => (
-                <div key={post.id} className="bg-[#F1F0F8] rounded-lg p-4 border border-gray-100 shadow-sm mb-3">
+                <div key={post.id} className="bg-[#F1F0F8] rounded-lg p-4">
                   <div className="flex justify-between items-center mb-2">
                     <h5 className="font-medium">{post.title}</h5>
                     <span className="text-sm text-gray-600">{post.date}</span>
@@ -67,10 +67,10 @@ export const AuthenticatedNav = () => {
                   </div>
                   
                   <div className="flex justify-between items-center mt-2">
-                    <span className="bg-white/80 px-3 py-1 rounded-full text-xs">
+                    <span className="bg-white px-3 py-1 rounded-full text-xs">
                       Post status: {post.postStatus}
                     </span>
-                    <span className="bg-white/80 px-3 py-1 rounded-full text-xs">
+                    <span className="bg-white px-3 py-1 rounded-full text-xs">
                       {post.paymentStatus}
                     </span>
                   </div>
