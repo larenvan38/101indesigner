@@ -7,18 +7,10 @@ import { Button } from "./ui/button";
 export const AuthenticatedNav = () => {
   return (
     <div className="flex items-center space-x-6">
-      <HoverTooltip
-        content={
-          <div className="w-48 p-2">
-            <h4 className="font-semibold mb-1">Applied Jobs</h4>
-          </div>
-        }
-      >
-        <Link to="/applied-jobs" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2 flex flex-col items-center transition-colors">
-          <Briefcase className="w-6 h-6" />
-          <span className="text-xs mt-1">Applied Jobs</span>
-        </Link>
-      </HoverTooltip>
+      <Link to="/applied-jobs" className="text-gray-700 hover:text-primary hover:bg-[#E0F5F1] rounded-md p-2 flex items-center gap-2 transition-colors">
+        <Briefcase className="w-5 h-5" />
+        <span className="text-sm">Applied Jobs</span>
+      </Link>
 
       <HoverTooltip
         content={
@@ -35,36 +27,20 @@ export const AuthenticatedNav = () => {
           </div>
         }
       >
-        <Link to="/your-posts" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2 flex flex-col items-center transition-colors">
-          <FileText className="w-6 h-6" />
-          <span className="text-xs mt-1">Your Posts</span>
+        <Link to="/your-posts" className="text-gray-700 hover:text-primary hover:bg-[#E0F5F1] rounded-md p-2 flex items-center gap-2 transition-colors">
+          <FileText className="w-5 h-5" />
+          <span className="text-sm">Your Posts</span>
         </Link>
       </HoverTooltip>
 
-      <HoverTooltip
-        content={
-          <div className="w-48 p-2">
-            <h4 className="font-semibold mb-1">Chats</h4>
-          </div>
-        }
-      >
-        <Link to="/chats" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2 flex flex-col items-center transition-colors">
-          <MessageSquare className="w-6 h-6" />
-          <span className="text-xs mt-1">Chats</span>
-        </Link>
-      </HoverTooltip>
+      <Link to="/chats" className="text-gray-700 hover:text-primary hover:bg-[#E0F5F1] rounded-md p-2 flex items-center gap-2 transition-colors">
+        <MessageSquare className="w-5 h-5" />
+        <span className="text-sm">Chats</span>
+      </Link>
 
-      <HoverTooltip
-        content={
-          <div className="w-48 p-2">
-            <h4 className="font-semibold mb-1">Notifications</h4>
-          </div>
-        }
-      >
-        <Link to="/notifications" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2">
-          <Bell className="w-6 h-6" />
-        </Link>
-      </HoverTooltip>
+      <Link to="/notifications" className="text-gray-700 hover:text-primary hover:bg-[#E0F5F1] rounded-md p-2">
+        <Bell className="w-5 h-5" />
+      </Link>
 
       <HoverTooltip
         content={
@@ -83,9 +59,9 @@ export const AuthenticatedNav = () => {
           </div>
         }
       >
-        <Link to="/credits" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2 flex flex-col items-center transition-colors">
-          <CreditCard className="w-6 h-6" />
-          <span className="text-xs mt-1">Credits</span>
+        <Link to="/credits" className="text-gray-700 hover:text-primary hover:bg-[#E0F5F1] rounded-md p-2 flex items-center gap-2 transition-colors">
+          <CreditCard className="w-5 h-5" />
+          <span className="text-sm">Credits</span>
         </Link>
       </HoverTooltip>
 
@@ -109,8 +85,8 @@ export const AuthenticatedNav = () => {
           </div>
         }
       >
-        <Link to="/profile" className="text-gray-700 hover:text-primary hover:bg-[#F2FCE2] rounded-md p-2">
-          <User className="w-6 h-6" />
+        <Link to="/profile" className="text-gray-700 hover:text-primary hover:bg-[#E0F5F1] rounded-md p-2">
+          <User className="w-5 h-5" />
         </Link>
       </HoverTooltip>
     </div>

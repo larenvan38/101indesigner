@@ -60,7 +60,7 @@ export default function YourPostsPage() {
       
       <div className="grid gap-6">
         {jobPosts.map((post) => (
-          <div key={post.id} className="bg-[#F2FCE2] rounded-2xl shadow-sm p-6 space-y-4 border border-gray-100">
+          <div key={post.id} className="bg-[#E0F5F1] rounded-2xl shadow-sm p-6 space-y-4 border border-gray-100">
             <div className="flex justify-between items-center">
               <h2 className="text-xl font-semibold">{post.title}</h2>
               <span className="text-gray-600">{post.date}</span>
