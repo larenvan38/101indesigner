@@ -14,7 +14,7 @@ export const AuthenticatedNav = () => {
 
       <HoverTooltip
         content={
-          <div className="w-48 p-2">
+          <div className="w-48 p-2 bg-[#F1F0F8]">
             <h4 className="font-semibold mb-1">Your Posts</h4>
             <Button 
               size="sm" 
