@@ -1,6 +1,6 @@
 
 import { Briefcase, FileText, MessageSquare, Bell, CreditCard, User, Pencil } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HoverTooltip } from "./ui/hover-tooltip";
 import { Button } from "./ui/button";
 
@@ -27,6 +27,8 @@ const mockPostsData = [
 ];
 
 export const AuthenticatedNav = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex items-center space-x-6">
       <Link to="/applied-jobs" className="text-gray-700 hover:text-primary hover:bg-[#E0F5F1] rounded-md p-2 flex items-center gap-2 transition-colors">
@@ -43,7 +45,7 @@ export const AuthenticatedNav = () => {
                 size="sm" 
                 variant="outline" 
                 className="hover:bg-[#E0F5F1]"
-                onClick={() => window.location.href = "/your-posts"}
+                onClick={() => navigate("/your-posts")}
               >
                 Open Further
               </Button>
@@ -51,7 +53,7 @@ export const AuthenticatedNav = () => {
             
             <div className="space-y-4">
               {mockPostsData.map(post => (
-                <div key={post.id} className="bg-[#F1F0F8] rounded-lg p-4">
+                <div key={post.id} className="bg-[#F1F0F8] rounded-lg p-4 mb-3">
                   <div className="flex justify-between items-center mb-2">
                     <h5 className="font-medium">{post.title}</h5>
                     <span className="text-sm text-gray-600">{post.date}</span>
