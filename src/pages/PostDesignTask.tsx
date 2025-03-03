@@ -2,17 +2,19 @@
 import { motion } from "framer-motion";
 import { ArrowLeftIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AuthenticatedNav } from "@/components/AuthenticatedNav";
 import { SecurityDepositSection } from "@/components/post-design/SecurityDepositSection";
 import { ProfileSection } from "@/components/post-design/ProfileSection";
 import { JobDetailsForm } from "@/components/post-design/JobDetailsForm";
+import { ProfileCompletionModal } from "@/components/ProfileCompletionModal";
 
 const PostDesignTask = () => {
   const [workType, setWorkType] = useState("");
   const [numJobs, setNumJobs] = useState<number>(1);
   const [salaryType, setSalaryType] = useState("");
   const [profileType, setProfileType] = useState("");
+  const [showProfileModal, setShowProfileModal] = useState(true);
 
   const handleNumJobsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value) || 1;
@@ -21,6 +23,11 @@ const PostDesignTask = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <ProfileCompletionModal 
+        isOpen={showProfileModal} 
+        onClose={() => setShowProfileModal(false)} 
+      />
+      
       <nav className="nav-container">
         <div className="section-container py-4">
           <div className="flex items-center justify-between">
@@ -28,7 +35,7 @@ const PostDesignTask = () => {
               <Link to="/signed-in" className="text-gray-600 hover:text-gray-900 transition-colors">
                 <ArrowLeftIcon className="w-6 h-6" />
               </Link>
-              <h1 className="font-display text-2xl font-bold">INDesigner</h1>
+              <Link to="/" className="font-display text-2xl font-bold">INDesigner</Link>
             </div>
             <AuthenticatedNav />
           </div>

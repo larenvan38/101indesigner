@@ -10,11 +10,8 @@ import { toast } from "sonner";
 const ProfileEditPage = () => {
   const [formData, setFormData] = useState({
     name: "John Doe",
-    email: "john@example.com",
-    mobile: "+1234567890",
     resume: "",
     portfolio: "https://portfolio.com",
-    linkedin: "https://linkedin.com/in/john",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +36,7 @@ const ProfileEditPage = () => {
               <Link to="/signed-in" className="text-gray-600 hover:text-gray-900 transition-colors">
                 <ArrowLeftIcon className="w-6 h-6" />
               </Link>
-              <h1 className="font-display text-2xl font-bold">INDesigner</h1>
+              <Link to="/" className="font-display text-2xl font-bold">INDesigner</Link>
             </div>
             <AuthenticatedNav />
           </div>
@@ -73,93 +70,46 @@ const ProfileEditPage = () => {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Full Name *</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="input-field w-full"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Email Address *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="input-field w-full"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Mobile Number *</label>
-                    <input
-                      type="tel"
-                      name="mobile"
-                      value={formData.mobile}
-                      onChange={handleChange}
-                      className="input-field w-full"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Resume/CV *</label>
-                    <input
-                      type="file"
-                      name="resume"
-                      className="input-field w-full"
-                      accept=".pdf,.doc,.docx"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Portfolio Link</label>
-                    <input
-                      type="url"
-                      name="portfolio"
-                      value={formData.portfolio}
-                      onChange={handleChange}
-                      className="input-field w-full"
-                      placeholder="https://yourportfolio.com"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium mb-2">LinkedIn Profile</label>
-                    <input
-                      type="url"
-                      name="linkedin"
-                      value={formData.linkedin}
-                      onChange={handleChange}
-                      className="input-field w-full"
-                      placeholder="https://linkedin.com/in/yourprofile"
-                    />
-                  </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    Full Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="input-field w-full"
+                    required
+                  />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Skillsets *</label>
+                  <label className="block text-sm font-medium mb-2">
+                    Resume/CV <span className="text-red-500">*</span>
+                  </label>
                   <input
-                    type="text"
-                    name="skills"
+                    type="file"
+                    name="resume"
                     className="input-field w-full"
-                    placeholder="e.g., UI Design, UX Research, Wireframing"
+                    accept=".pdf,.doc,.docx"
                     required
                   />
-                  <p className="text-sm text-gray-500 mt-1">Separate skills with commas</p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    Portfolio Link <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="url"
+                    name="portfolio"
+                    value={formData.portfolio}
+                    onChange={handleChange}
+                    className="input-field w-full"
+                    placeholder="https://yourportfolio.com"
+                    required
+                  />
                 </div>
 
                 <div className="pt-4">

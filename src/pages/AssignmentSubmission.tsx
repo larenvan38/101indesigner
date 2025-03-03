@@ -11,6 +11,7 @@ const AssignmentSubmission = () => {
   const [assignmentLink, setAssignmentLink] = useState("");
   const [countdown, setCountdown] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [credits, setCredits] = useState(150); // Mock credits value
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,6 +39,10 @@ const AssignmentSubmission = () => {
     setCountdown(0);
   };
 
+  const handlePurchaseCredits = () => {
+    navigate("/credits");
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <nav className="nav-container">
@@ -47,7 +52,7 @@ const AssignmentSubmission = () => {
               <Link to="/authenticated-explore-jobs" className="text-gray-600 hover:text-gray-900 transition-colors">
                 <ArrowLeftIcon className="w-6 h-6" />
               </Link>
-              <h1 className="font-display text-2xl font-bold">INDesigner</h1>
+              <Link to="/" className="font-display text-2xl font-bold">INDesigner</Link>
             </div>
             <AuthenticatedNav />
           </div>
@@ -76,8 +81,11 @@ const AssignmentSubmission = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium mb-2">Credits:</label>
-                <div className="bg-white rounded-md p-3 w-1/2">
-                  <span className="text-sm">Display the total credits/charge if credits are not there</span>
+                <div className="flex items-center justify-between bg-white rounded-md p-3">
+                  <span className="text-sm font-medium">{credits} credits available</span>
+                  <Button variant="outline" size="sm" onClick={handlePurchaseCredits}>
+                    Purchase
+                  </Button>
                 </div>
               </div>
               

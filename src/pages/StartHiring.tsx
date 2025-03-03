@@ -34,7 +34,7 @@ const StartHiring = () => {
               <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
                 <ArrowLeftIcon className="w-6 h-6" />
               </Link>
-              <h1 className="font-display text-2xl font-bold">INDesigner</h1>
+              <Link to="/" className="font-display text-2xl font-bold">INDesigner</Link>
             </div>
             <Button onClick={handleSignInClick} variant="outline">
               Sign In

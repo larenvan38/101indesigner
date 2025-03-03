@@ -13,7 +13,7 @@ const ViewingAssignment = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-white to-secondary/10">
       <nav className="nav-container">
         <div className="section-container py-4">
           <div className="flex items-center justify-between">
@@ -21,7 +21,7 @@ const ViewingAssignment = () => {
               <Link to="/authenticated-explore-jobs" className="text-gray-600 hover:text-gray-900 transition-colors">
                 <ArrowLeftIcon className="w-6 h-6" />
               </Link>
-              <h1 className="font-display text-2xl font-bold">INDesigner</h1>
+              <Link to="/" className="font-display text-2xl font-bold">INDesigner</Link>
             </div>
             <AuthenticatedNav />
           </div>
@@ -45,37 +45,43 @@ const ViewingAssignment = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="bg-gray-100 p-8 rounded-lg mb-8"
+            className="mb-8"
           >
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-xl font-semibold mb-4">Assignment Details</h2>
-                <div className="bg-white p-6 rounded-lg">
-                  <h3 className="font-medium text-lg mb-3">UI Designer for E-commerce Website</h3>
-                  
-                  <div className="space-y-4 mb-6">
+            <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-100">
+              <h2 className="text-2xl font-bold mb-6 pb-4 border-b">Assignment Details</h2>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">UI Designer for E-commerce Website</h3>
+                  <p className="text-primary/70 mt-1">Posted by: Acme Corporation</p>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
                     <div>
-                      <h4 className="font-medium">Requirements:</h4>
-                      <p>Create a responsive homepage design for an e-commerce platform specializing in handcrafted jewelry.</p>
+                      <h4 className="font-semibold text-gray-900">Requirements</h4>
+                      <p className="text-gray-700 mt-1">Create a responsive homepage design for an e-commerce platform specializing in handcrafted jewelry.</p>
                     </div>
                     
                     <div>
-                      <h4 className="font-medium">Skills Required:</h4>
-                      <div className="flex flex-wrap gap-2 mt-1">
-                        <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">UI Design</span>
-                        <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">Responsive Design</span>
-                        <span className="bg-accent/50 px-2 py-1 rounded-full text-xs">E-commerce</span>
+                      <h4 className="font-semibold text-gray-900">Skills Required</h4>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        <span className="bg-accent px-3 py-1 rounded-full text-xs font-medium">UI Design</span>
+                        <span className="bg-accent px-3 py-1 rounded-full text-xs font-medium">Responsive Design</span>
+                        <span className="bg-accent px-3 py-1 rounded-full text-xs font-medium">E-commerce</span>
                       </div>
                     </div>
                     
                     <div>
-                      <h4 className="font-medium">Timeline:</h4>
-                      <p>3 days from assignment acceptance</p>
+                      <h4 className="font-semibold text-gray-900">Timeline</h4>
+                      <p className="text-gray-700 mt-1">3 days from assignment acceptance</p>
                     </div>
-                    
+                  </div>
+                  
+                  <div className="space-y-4">
                     <div>
-                      <h4 className="font-medium">Deliverables:</h4>
-                      <ul className="list-disc pl-5 mt-1">
+                      <h4 className="font-semibold text-gray-900">Deliverables</h4>
+                      <ul className="list-disc pl-5 mt-1 text-gray-700">
                         <li>Homepage design (desktop & mobile)</li>
                         <li>Design system components</li>
                         <li>Interactive prototype</li>
@@ -83,14 +89,15 @@ const ViewingAssignment = () => {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium">Compensation:</h4>
-                      <p>₹15,000 - ₹20,000 based on quality and experience</p>
+                      <h4 className="font-semibold text-gray-900">Compensation</h4>
+                      <p className="text-gray-700 mt-1 font-medium">₹15,000 - ₹20,000 based on quality and experience</p>
                     </div>
                   </div>
-                  
-                  <div className="bg-yellow-50 p-4 rounded-md border border-yellow-200">
-                    <p className="text-sm text-yellow-800">Note: This assignment requires attention to detail and understanding of modern e-commerce UX patterns. Your submission will be evaluated based on creativity, usability, and adherence to requirements.</p>
-                  </div>
+                </div>
+                
+                <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 mt-6">
+                  <p className="text-yellow-800 font-medium mb-1">Important Note</p>
+                  <p className="text-sm text-yellow-700">This assignment requires attention to detail and understanding of modern e-commerce UX patterns. Your submission will be evaluated based on creativity, usability, and adherence to requirements.</p>
                 </div>
               </div>
             </div>
@@ -100,9 +107,9 @@ const ViewingAssignment = () => {
             <Button 
               onClick={handleUnderstood} 
               size="lg"
-              className="px-8"
+              className="px-12 py-6 text-lg"
             >
-              I Understood The Assignment
+              I Understand The Assignment
             </Button>
           </div>
         </div>
