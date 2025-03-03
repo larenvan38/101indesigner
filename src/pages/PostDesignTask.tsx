@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeftIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { AuthenticatedNav } from "@/components/AuthenticatedNav";
+import { AuthenticatedNav } from "@/components/authenticated-nav";
 import { SecurityDepositSection } from "@/components/post-design/SecurityDepositSection";
 import { ProfileSection } from "@/components/post-design/ProfileSection";
 import { JobDetailsForm } from "@/components/post-design/JobDetailsForm";

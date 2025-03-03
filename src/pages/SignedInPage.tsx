@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthenticatedNav } from "@/components/AuthenticatedNav";
+import { AuthenticatedNav } from "@/components/authenticated-nav";
 import { ProfileCompletionModal } from "@/components/ProfileCompletionModal";
 import { ArrowLeftIcon } from "lucide-react";
 

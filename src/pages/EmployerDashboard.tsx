@@ -1,7 +1,6 @@
-
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { AuthenticatedNav } from "@/components/AuthenticatedNav";
+import { AuthenticatedNav } from "@/components/authenticated-nav";
 
 const EmployerDashboard = () => {
   return (

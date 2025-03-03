@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeftIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import { AuthenticatedNav } from "@/components/AuthenticatedNav";
+import { AuthenticatedNav } from "@/components/authenticated-nav";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 

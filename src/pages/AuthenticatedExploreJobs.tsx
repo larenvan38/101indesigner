@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeftIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import { AuthenticatedNav } from "@/components/AuthenticatedNav";
+import { AuthenticatedNav } from "@/components/authenticated-nav";
 import { JobCard } from "@/components/jobs/JobCard";
 import { JobFilters } from "@/components/jobs/JobFilters";
 import { SearchBar } from "@/components/jobs/SearchBar";
