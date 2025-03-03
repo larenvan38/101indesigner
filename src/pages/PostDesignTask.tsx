@@ -42,9 +42,9 @@ const PostDesignTask = () => {
             animate={{ opacity: 1, y: 0 }}
             className="mb-4"
           >
-            <h1 className="text-3xl font-bold mb-2">Post Your Design Task</h1>
+            <h1 className="text-3xl font-bold mb-2">Post Your Design Assignment</h1>
             <p className="text-gray-600">
-              Create a task-based job posting to find the perfect designer.
+              Create an assignment-based job posting to find the perfect designer.
             </p>
           </motion.div>
 
