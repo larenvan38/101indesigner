@@ -86,14 +86,13 @@ const ProfileEditPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Resume/CV <span className="text-red-500">*</span>
+                    Resume/CV
                   </label>
                   <input
                     type="file"
                     name="resume"
                     className="input-field w-full"
                     accept=".pdf,.doc,.docx"
-                    required
                   />
                 </div>
 

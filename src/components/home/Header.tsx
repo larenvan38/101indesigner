@@ -1,6 +1,5 @@
-
 import { Button } from "@/components/ui/button";
-import { AuthenticatedNav } from "@/components/AuthenticatedNav";
+import { AuthenticatedNav } from "@/components/authenticated-nav";
 
 interface HeaderProps {
   isAuthenticated: boolean;

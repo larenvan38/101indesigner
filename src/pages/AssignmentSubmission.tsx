@@ -1,9 +1,8 @@
-
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeftIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import { AuthenticatedNav } from "@/components/AuthenticatedNav";
+import { AuthenticatedNav } from "@/components/authenticated-nav";
 import { Button } from "@/components/ui/button";
 
 const AssignmentSubmission = () => {
@@ -82,8 +81,8 @@ const AssignmentSubmission = () => {
               <div>
                 <label className="block text-sm font-medium mb-2">Credits:</label>
                 <div className="flex items-center justify-between bg-white rounded-md p-3">
-                  <span className="text-sm font-medium">{credits} credits available</span>
-                  <Button variant="outline" size="sm" onClick={handlePurchaseCredits}>
+                  <span className="text-sm font-medium">Available credits: {credits}</span>
+                  <Button variant="outline" size="sm" onClick={handlePurchaseCredits} className="bg-primary text-white hover:bg-primary/90">
                     Purchase
                   </Button>
                 </div>
