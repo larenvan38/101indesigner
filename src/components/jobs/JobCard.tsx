@@ -1,6 +1,7 @@
 
 import { BriefcaseIcon, ArrowRightIcon } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface JobCardProps {
   title: string;
@@ -83,16 +84,19 @@ export const JobCard = ({
               </div>
             </div>
             <div className="flex gap-3">
-              <button className="button-primary py-2" onClick={onViewAssignment}>
-                View Assignment
-              </button>
-              <button 
-                onClick={onSubmitAssignment}
-                className="button-primary py-2 flex items-center gap-2"
-              >
-                Submit Assignment
-                <ArrowRightIcon className="w-4 h-4" />
-              </button>
+              <Link to="/viewing-assignment">
+                <button className="button-primary py-2">
+                  View Assignment
+                </button>
+              </Link>
+              <Link to="/assignment-submission">
+                <button 
+                  className="button-primary py-2 flex items-center gap-2"
+                >
+                  Submit Assignment
+                  <ArrowRightIcon className="w-4 h-4" />
+                </button>
+              </Link>
             </div>
           </div>
           <div className="text-sm text-gray-600">

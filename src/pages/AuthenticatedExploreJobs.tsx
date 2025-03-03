@@ -7,11 +7,22 @@ import { JobCard } from "@/components/jobs/JobCard";
 import { JobFilters } from "@/components/jobs/JobFilters";
 import { SearchBar } from "@/components/jobs/SearchBar";
 import { jobsData } from "@/data/jobsData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ProfileCompletionModal } from "@/components/ProfileCompletionModal";
 
 const AuthenticatedExploreJobs = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+  const [showProfileModal, setShowProfileModal] = useState(false);
+
+  useEffect(() => {
+    // Show the profile completion modal when the page loads
+    const timer = setTimeout(() => {
+      setShowProfileModal(true);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleFilterChange = (filter: string) => {
     setActiveFilter(filter);
@@ -71,6 +82,11 @@ const AuthenticatedExploreJobs = () => {
           </motion.div>
         </div>
       </main>
+
+      <ProfileCompletionModal 
+        isOpen={showProfileModal}
+        onClose={() => setShowProfileModal(false)}
+      />
     </div>
   );
 };
