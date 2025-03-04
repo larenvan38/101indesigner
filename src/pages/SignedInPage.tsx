@@ -99,7 +99,7 @@ const SignedInPage = () => {
                   </div>
                   
                   <Button onClick={handleFindDesignJobs} size="lg" className="mb-20">
-                    Explore Design Assignments
+                    Explore Jobs
                   </Button>
                 </motion.div>
               ) : (
@@ -129,7 +129,7 @@ const SignedInPage = () => {
                   </div>
                   
                   <Button onClick={handleHireDesigner} size="lg" className="mb-20">
-                    Post a Design Assignment
+                    Start Hiring Now
                   </Button>
                 </motion.div>
               )}
