@@ -1,15 +1,15 @@
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthenticatedNav } from "@/components/authenticated-nav";
 import { ProfileCompletionModal } from "@/components/ProfileCompletionModal";
-import { ArrowLeftIcon, BriefcaseIcon, UsersIcon } from "lucide-react";
+import { ArrowLeftIcon, BriefcaseIcon, UsersIcon, StarIcon, ShieldCheckIcon, SparklesIcon, CreditCardIcon } from "lucide-react";
 
 const SignedInPage = () => {
   const navigate = useNavigate();
   const [showProfileModal, setShowProfileModal] = useState(true);
+  const [currentView, setCurrentView] = useState<'jobs' | 'employers'>('jobs');
   
   useEffect(() => {
     // Show the modal when the component mounts
@@ -62,38 +62,90 @@ const SignedInPage = () => {
             Connect with top design talent or find exciting design opportunities tailored to your skills.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <motion.div 
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.2 }}
-              className="feature-card"
+          {/* View Toggle Buttons */}
+          <div className="flex items-center justify-center gap-4 mb-16">
+            <button 
+              onClick={() => setCurrentView('jobs')}
+              className={currentView === 'jobs' ? 'button-primary' : 'button-secondary'}
             >
-              <UsersIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
-              <h2 className="text-2xl font-bold mb-4">Hire Designers</h2>
-              <p className="text-gray-600 mb-6">
-                Post design assignments and find the perfect designer for your project.
-              </p>
-              <Button onClick={handleHireDesigner} size="lg" className="w-full">
-                Post a Design Assignment
-              </Button>
-            </motion.div>
+              Find Design Jobs
+            </button>
+            <button 
+              onClick={() => setCurrentView('employers')}
+              className={currentView === 'employers' ? 'button-primary' : 'button-secondary'}
+            >
+              For Employers
+            </button>
+          </div>
 
-            <motion.div 
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.2 }}
-              className="feature-card"
-            >
-              <BriefcaseIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
-              <h2 className="text-2xl font-bold mb-4">Find Design Jobs</h2>
-              <p className="text-gray-600 mb-6">
-                Explore design assignments and showcase your skills to potential clients.
-              </p>
-              <Button onClick={handleFindDesignJobs} size="lg" variant="outline" className="w-full">
-                Explore Design Assignments
-              </Button>
-            </motion.div>
+          {/* Dynamic Content based on selected view */}
+          <div className="overflow-hidden">
+            <AnimatePresence mode="wait">
+              {currentView === 'jobs' ? (
+                <motion.div
+                  key="jobs"
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 100 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+                    <div className="feature-card">
+                      <BriefcaseIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Task-Based Hiring</h3>
+                      <p className="text-gray-600">Show your skills through real design tasks, not just resumes.</p>
+                    </div>
+                    <div className="feature-card">
+                      <UsersIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Quality Candidates</h3>
+                      <p className="text-gray-600">Submission fee ensures only serious designers apply.</p>
+                    </div>
+                    <div className="feature-card">
+                      <StarIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Verified Employers</h3>
+                      <p className="text-gray-600">Anti-fraud deposit system for secure hiring process.</p>
+                    </div>
+                  </div>
+                  
+                  <Button onClick={handleFindDesignJobs} size="lg" className="mb-20">
+                    Explore Design Assignments
+                  </Button>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="employers"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+                    <div className="feature-card">
+                      <ShieldCheckIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Verified Candidates</h3>
+                      <p className="text-gray-600">Every applicant is pre-screened and committed with a submission fee.</p>
+                    </div>
+                    <div className="feature-card">
+                      <SparklesIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Task-Based Selection</h3>
+                      <p className="text-gray-600">Evaluate designers based on their actual work, not just their portfolio.</p>
+                    </div>
+                    <div className="feature-card">
+                      <CreditCardIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
+                      <h3 className="mb-3">Safe Hiring</h3>
+                      <p className="text-gray-600">Refundable ₹2500 deposit ensures a secure hiring process.</p>
+                    </div>
+                  </div>
+                  
+                  <Button onClick={handleHireDesigner} size="lg" className="mb-20">
+                    Post a Design Assignment
+                  </Button>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
           
+          {/* Keep the current "How It Works" section */}
           <motion.section 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
