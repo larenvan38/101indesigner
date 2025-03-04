@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthenticatedNav } from "@/components/authenticated-nav";
 import { ProfileCompletionModal } from "@/components/ProfileCompletionModal";
 import { ArrowLeftIcon, BriefcaseIcon, UsersIcon, StarIcon, ShieldCheckIcon, SparklesIcon, CreditCardIcon } from "lucide-react";
+import { ViewToggle } from "@/components/home/ViewToggle";
 
 const SignedInPage = () => {
   const navigate = useNavigate();
@@ -63,20 +64,10 @@ const SignedInPage = () => {
           </p>
 
           {/* View Toggle Buttons */}
-          <div className="flex items-center justify-center gap-4 mb-16">
-            <button 
-              onClick={() => setCurrentView('jobs')}
-              className={currentView === 'jobs' ? 'button-primary' : 'button-secondary'}
-            >
-              Find Design Jobs
-            </button>
-            <button 
-              onClick={() => setCurrentView('employers')}
-              className={currentView === 'employers' ? 'button-primary' : 'button-secondary'}
-            >
-              For Employers
-            </button>
-          </div>
+          <ViewToggle 
+            currentView={currentView} 
+            onViewChange={setCurrentView} 
+          />
 
           {/* Dynamic Content based on selected view */}
           <div className="overflow-hidden">
