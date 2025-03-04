@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -80,8 +79,10 @@ const SignedInPage = () => {
                   <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
                     A task-based job portal where serious designers meet quality opportunities. Show your skills, not just your resume.
                   </p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+                  <Button onClick={handleFindDesignJobs} size="lg" className="py-4 px-8 text-xl mb-24">
+                    Explore Jobs
+                  </Button>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
                     <div className="feature-card">
                       <BriefcaseIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
                       <h3 className="mb-3">Task-Based Hiring</h3>
@@ -98,10 +99,6 @@ const SignedInPage = () => {
                       <p className="text-gray-600">Anti-fraud deposit system for secure hiring process.</p>
                     </div>
                   </div>
-                  
-                  <Button onClick={handleFindDesignJobs} size="lg" className="mb-20">
-                    Explore Jobs
-                  </Button>
                 </motion.div>
               ) : (
                 <motion.div
@@ -120,8 +117,10 @@ const SignedInPage = () => {
                   <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
                     Connect with pre-screened designers committed to delivering quality work through our task-based hiring platform.
                   </p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+                  <Button onClick={handleHireDesigner} size="lg" className="py-4 px-8 text-xl mb-24">
+                    Start Hiring Now
+                  </Button>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
                     <div className="feature-card">
                       <ShieldCheckIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
                       <h3 className="mb-3">Verified Candidates</h3>
@@ -138,10 +137,6 @@ const SignedInPage = () => {
                       <p className="text-gray-600">Refundable ₹2500 deposit ensures a secure hiring process.</p>
                     </div>
                   </div>
-                  
-                  <Button onClick={handleHireDesigner} size="lg" className="mb-20">
-                    Start Hiring Now
-                  </Button>
                 </motion.div>
               )}
             </AnimatePresence>
