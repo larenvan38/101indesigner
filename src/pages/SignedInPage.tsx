@@ -89,7 +89,7 @@ const SignedInPage = () => {
                     Explore Jobs
                   </button>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 mb-20">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24 mb-20">
                     <div className="feature-card">
                       <BriefcaseIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
                       <h3 className="mb-3">Task-Based Hiring</h3>
@@ -133,7 +133,7 @@ const SignedInPage = () => {
                     Start Hiring Now
                   </button>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 mb-20">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24 mb-20">
                     <div className="feature-card">
                       <ShieldCheckIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
                       <h3 className="mb-3">Verified Candidates</h3>
