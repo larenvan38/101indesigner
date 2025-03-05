@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { BriefcaseIcon, UsersIcon, StarIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 interface JobsViewProps {
   isAuthenticated: boolean;
@@ -21,7 +22,15 @@ export const JobsView = ({ isAuthenticated }: JobsViewProps) => {
         <span className="inline-block bg-accent px-4 py-2 rounded-full text-sm font-medium mb-8">
           Design Your Future
         </span>
-        <h1 className="mb-6">Connect with Top Design Opportunities</h1>
+        <TextAnimate 
+          as="h1" 
+          className="mb-6" 
+          animation="blurInUp" 
+          by="word"
+          once={true}
+        >
+          Connect with Top Design Opportunities
+        </TextAnimate>
         <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
           A task-based job portal where serious designers meet quality opportunities. Show your skills, not just your resume.
         </p>
