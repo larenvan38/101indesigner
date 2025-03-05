@@ -5,6 +5,8 @@ import { ArrowLeftIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { AuthenticatedNav } from "@/components/authenticated-nav";
 import { Button } from "@/components/ui/button";
+import { ProfileCompletionModal } from "@/components/ProfileCompletionModal";
+import { PurchaseCreditsTooltip } from "@/components/PurchaseCreditsTooltip";
 
 const AssignmentSubmission = () => {
   const navigate = useNavigate();
@@ -12,6 +14,12 @@ const AssignmentSubmission = () => {
   const [countdown, setCountdown] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [credits, setCredits] = useState(150); // Mock credits value
+  const [showProfileModal, setShowProfileModal] = useState(true);
+  
+  useEffect(() => {
+    // Show the modal when the component mounts
+    setShowProfileModal(true);
+  }, []);
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,12 +47,13 @@ const AssignmentSubmission = () => {
     setCountdown(0);
   };
 
-  const handlePurchaseCredits = () => {
-    navigate("/credits");
-  };
-
   return (
     <div className="min-h-screen bg-white">
+      <ProfileCompletionModal 
+        isOpen={showProfileModal} 
+        onClose={() => setShowProfileModal(false)} 
+      />
+      
       <nav className="nav-container">
         <div className="section-container py-4">
           <div className="flex items-center justify-between">
@@ -83,14 +92,7 @@ const AssignmentSubmission = () => {
                 <label className="block text-sm font-medium mb-2">Credits:</label>
                 <div className="flex items-center justify-between bg-white rounded-md p-3">
                   <span className="text-sm font-medium">Available credits: {credits}</span>
-                  <Button 
-                    variant="default" 
-                    size="sm" 
-                    onClick={handlePurchaseCredits} 
-                    className="bg-primary hover:bg-primary/90 text-white"
-                  >
-                    Purchase
-                  </Button>
+                  <PurchaseCreditsTooltip />
                 </div>
               </div>
               

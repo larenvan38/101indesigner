@@ -27,6 +27,14 @@ const ProfileEditPage = () => {
     toast.success("Profile updated successfully");
   };
 
+  // Calculate profile completion percentage
+  const getProfileCompletion = () => {
+    // Only name is required for 100% completion
+    return formData.name ? 100 : 0;
+  };
+  
+  const completionPercentage = getProfileCompletion();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary/10">
       <nav className="nav-container">
@@ -64,9 +72,9 @@ const ProfileEditPage = () => {
             <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
               <div className="mb-6">
                 <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div className="bg-primary h-3 rounded-full w-3/5"></div>
+                  <div className="bg-primary h-3 rounded-full" style={{ width: `${completionPercentage}%` }}></div>
                 </div>
-                <p className="text-right text-sm mt-1 text-gray-600">Profile Completion: 60%</p>
+                <p className="text-right text-sm mt-1 text-gray-600">Profile Completion: {completionPercentage}%</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -98,7 +106,7 @@ const ProfileEditPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Portfolio Link <span className="text-red-500">*</span>
+                    Portfolio Link
                   </label>
                   <input
                     type="url"
@@ -107,8 +115,10 @@ const ProfileEditPage = () => {
                     onChange={handleChange}
                     className="input-field w-full"
                     placeholder="https://yourportfolio.com"
-                    required
                   />
+                  <p className="text-sm text-gray-500 mt-1">
+                    To submit an assignment, you need to include your portfolio.
+                  </p>
                 </div>
 
                 <div className="pt-4">
