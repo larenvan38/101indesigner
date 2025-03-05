@@ -78,13 +78,16 @@ const SignedInPage = () => {
                   <h1 className="text-4xl md:text-5xl font-bold">
                     Connect with Top Design Opportunities
                   </h1>
-                  <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                  <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-12">
                     A task-based job portal where serious designers meet quality opportunities. Show your skills, not just your resume.
                   </p>
 
-                  <Button onClick={handleFindDesignJobs} size="lg" className="px-12 py-6 text-base">
+                  <button 
+                    onClick={handleFindDesignJobs} 
+                    className="button-primary px-8 py-4 rounded-lg mb-20"
+                  >
                     Explore Jobs
-                  </Button>
+                  </button>
                   
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 mb-20">
                     <div className="feature-card">
@@ -119,13 +122,16 @@ const SignedInPage = () => {
                   <h1 className="text-4xl md:text-5xl font-bold">
                     Find Top Design Talent
                   </h1>
-                  <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                  <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-12">
                     Connect with pre-screened designers committed to delivering quality work through our task-based hiring platform.
                   </p>
 
-                  <Button onClick={handleHireDesigner} size="lg" className="px-12 py-6 text-base">
+                  <button 
+                    onClick={handleHireDesigner} 
+                    className="button-primary px-8 py-4 rounded-lg mb-20"
+                  >
                     Start Hiring Now
-                  </Button>
+                  </button>
                   
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 mb-20">
                     <div className="feature-card">
