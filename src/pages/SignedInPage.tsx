@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,6 @@ const SignedInPage = () => {
   const [currentView, setCurrentView] = useState<'jobs' | 'employers'>('jobs');
   
   useEffect(() => {
-    // Show the modal when the component mounts
     setShowProfileModal(true);
   }, []);
 
@@ -54,13 +52,11 @@ const SignedInPage = () => {
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto text-center"
         >
-          {/* View Toggle Buttons */}
           <ViewToggle 
             currentView={currentView} 
             onViewChange={setCurrentView} 
           />
 
-          {/* Dynamic Content based on selected view */}
           <div className="overflow-hidden mt-16">
             <AnimatePresence mode="wait">
               {currentView === 'jobs' ? (
@@ -84,12 +80,12 @@ const SignedInPage = () => {
 
                   <button 
                     onClick={handleFindDesignJobs} 
-                    className="button-primary px-8 py-4 rounded-lg mb-20"
+                    className="button-primary px-8 py-4 rounded-lg mb-24"
                   >
                     Explore Jobs
                   </button>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24 mb-20">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                     <div className="feature-card">
                       <BriefcaseIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
                       <h3 className="mb-3">Task-Based Hiring</h3>
@@ -128,12 +124,12 @@ const SignedInPage = () => {
 
                   <button 
                     onClick={handleHireDesigner} 
-                    className="button-primary px-8 py-4 rounded-lg mb-20"
+                    className="button-primary px-8 py-4 rounded-lg mb-24"
                   >
                     Start Hiring Now
                   </button>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24 mb-20">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                     <div className="feature-card">
                       <ShieldCheckIcon className="w-16 h-16 text-primary mb-6 mx-auto" />
                       <h3 className="mb-3">Verified Candidates</h3>
@@ -155,7 +151,6 @@ const SignedInPage = () => {
             </AnimatePresence>
           </div>
           
-          {/* Keep the current "How It Works" section */}
           <motion.section 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
